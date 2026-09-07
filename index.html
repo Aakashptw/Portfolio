@@ -187,6 +187,48 @@
     }
 
     /* ==========================================================
+       SPIDER-MAN SLIDE & PENDULUM GREETING ANIMATIONS
+       ========================================================== */
+    @keyframes spideyPendulum {
+      0% {
+        transform: rotate(-3deg);
+      }
+      100% {
+        transform: rotate(3deg);
+      }
+    }
+
+    @keyframes spideyEyeBlink {
+      0%, 90%, 100% {
+        transform: scaleY(1);
+      }
+      95% {
+        transform: scaleY(0.15);
+      }
+    }
+
+    .spidey-eye {
+      transform-origin: 70px 150px;
+      animation: spideyEyeBlink 4.5s ease-in-out infinite;
+    }
+
+    @keyframes spideySpin360 {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+      50% {
+        transform: rotate(180deg) scale(1.15);
+      }
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
+    }
+
+    .spidey-spinning {
+      animation: spideySpin360 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    }
+
+    /* ==========================================================
        PRINT STYLING: SINGLE-PAGE STRUCTURED RESUME
        ========================================================== */
     #print-resume {
@@ -310,6 +352,137 @@
 
   <!-- Background Grid Texture -->
   <div class="fixed inset-0 editorial-grid pointer-events-none z-0 opacity-40"></div>
+
+  <!-- ==========================================================
+       SPIDER-MAN GREETING OVERLAY (SLIDES FROM ABOVE ON LOAD)
+       ========================================================== -->
+  <div id="spidey-greeting-container"
+    class="no-print fixed top-0 z-50 pointer-events-none transition-all duration-700 ease-out"
+    style="right: clamp(12px, 8vw, 120px); transform: translateY(-135%);">
+
+    <!-- Pendulum Swinging Wrapper -->
+    <div id="spidey-pendulum-wrapper"
+      class="relative flex flex-col items-center pointer-events-auto origin-top"
+      style="animation: spideyPendulum 3.5s ease-in-out infinite alternate;">
+
+      <!-- Ceiling Web Strand -->
+      <div class="w-[2.5px] h-28 sm:h-36 bg-gradient-to-b from-white/40 via-white/80 to-white shadow-[0_0_8px_rgba(255,255,255,0.9)]"></div>
+
+      <!-- Spider-Man Upside-Down Character (Click to trigger spin easter-egg!) -->
+      <div id="spidey-figure" class="relative cursor-pointer select-none group transition-transform duration-300 hover:scale-105"
+        onclick="spideyReactionClick()" title="Click Spidey for a spider-spin!">
+
+        <svg width="130" height="170" viewBox="0 0 130 170" fill="none" xmlns="http://www.w3.org/2000/svg"
+          class="drop-shadow-[0_15px_25px_rgba(0,0,0,0.65)]">
+          <!-- Web Grip around feet -->
+          <line x1="65" y1="0" x2="65" y2="35" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" />
+          
+          <!-- Feet clinging upside down -->
+          <ellipse cx="65" cy="36" rx="9" ry="5" fill="#dc2626" stroke="#1e293b" stroke-width="1.5" />
+
+          <!-- Bent legs / thighs (upside-down crouching pose) -->
+          <!-- Left leg -->
+          <path d="M60 36 C46 42 32 54 36 72 C40 82 52 84 60 80 C52 70 48 58 60 46 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5" />
+          <path d="M36 72 C33 79 40 87 50 89 C54 84 50 78 41 76 Z" fill="#dc2626" stroke="#991b1b" stroke-width="1.5" />
+          
+          <!-- Right leg -->
+          <path d="M70 36 C84 42 98 54 94 72 C90 82 78 84 70 80 C78 70 82 58 70 46 Z" fill="#2563eb" stroke="#1d4ed8" stroke-width="1.5" />
+          <path d="M94 72 C97 79 90 87 80 89 C76 84 80 78 89 76 Z" fill="#dc2626" stroke="#991b1b" stroke-width="1.5" />
+
+          <!-- Torso (upside down) -->
+          <!-- Blue muscular flanks -->
+          <path d="M42 82 C44 100 50 110 58 116 C52 110 48 98 46 83 Z" fill="#1d4ed8" />
+          <path d="M88 82 C86 100 80 110 72 116 C78 110 82 98 84 83 Z" fill="#1d4ed8" />
+          <!-- Red center chest & abdomen -->
+          <path d="M48 80 C48 105 52 118 65 120 C78 118 82 105 82 80 C74 83 56 83 48 80 Z" fill="#dc2626" stroke="#991b1b" stroke-width="1.5" />
+
+          <!-- Spider chest insignia -->
+          <polygon points="65,94 68,98 65,103 62,98" fill="#0f172a" />
+          <path d="M63 96 Q56 92 53 87 M67 96 Q74 92 77 87 M63 98 Q54 98 51 96 M67 98 Q76 98 79 96 M63 100 Q55 104 53 109 M67 100 Q75 104 77 109 M63 102 Q58 108 56 113 M67 102 Q72 108 74 113"
+            stroke="#0f172a" stroke-width="1.2" stroke-linecap="round" />
+
+          <!-- Arms -->
+          <!-- Left arm holding web strand -->
+          <path d="M48 83 C44 72 52 58 63 42 C66 45 66 50 59 62 C55 70 53 79 50 85 Z" fill="#dc2626" stroke="#991b1b" stroke-width="1.5" />
+          <!-- Right arm hanging down giving iconic Spider-Man web gesture -->
+          <path d="M82 83 C88 93 92 103 98 112 C101 117 106 120 108 126 C104 126 100 122 96 116 C90 107 86 98 80 87 Z" fill="#dc2626" stroke="#991b1b" stroke-width="1.5" />
+          <!-- Web shooter hand gesture -->
+          <circle cx="107" cy="127" r="4.5" fill="#dc2626" />
+          <line x1="108" y1="130" x2="112" y2="137" stroke="#dc2626" stroke-width="2" stroke-linecap="round" />
+          <line x1="105" y1="130" x2="105" y2="139" stroke="#dc2626" stroke-width="2" stroke-linecap="round" />
+
+          <!-- Upside-down Head at the bottom -->
+          <ellipse cx="65" cy="142" rx="20" ry="24" fill="#dc2626" stroke="#991b1b" stroke-width="2" />
+          
+          <!-- Web lines on mask -->
+          <path d="M65 118 L65 166 M45 142 L85 142 M50 125 L80 159 M50 159 L80 125" stroke="#991b1b" stroke-width="0.9" opacity="0.6" />
+          <ellipse cx="65" cy="142" rx="9" ry="11" fill="none" stroke="#991b1b" stroke-width="0.9" opacity="0.6" />
+          <ellipse cx="65" cy="142" rx="15" ry="18" fill="none" stroke="#991b1b" stroke-width="0.9" opacity="0.6" />
+
+          <!-- Iconic White Spider-Man Eyes with Black Borders (Animated Blink) -->
+          <!-- Left eye (viewer's left) -->
+          <path class="spidey-eye" d="M50 132 C60 136 62 149 61 156 C51 152 46 142 50 132 Z"
+            fill="#ffffff" stroke="#09090b" stroke-width="3" stroke-linejoin="round" />
+          <!-- Right eye (viewer's right) -->
+          <path class="spidey-eye" d="M80 132 C70 136 68 149 69 156 C79 152 84 142 80 132 Z"
+            fill="#ffffff" stroke="#09090b" stroke-width="3" stroke-linejoin="round" />
+        </svg>
+
+        <!-- Spider-Man Click Hint Badge -->
+        <div class="absolute -bottom-5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-mono text-rose-400 whitespace-nowrap bg-black/80 px-2 py-0.5 rounded-full border border-rose-500/30">
+          Click to spin! 🕸️
+        </div>
+      </div>
+
+      <!-- Speech Bubble (Positioned relative to Spidey) -->
+      <div id="spidey-speech-bubble"
+        class="absolute top-[80px] sm:top-[120px] right-[-10px] sm:right-auto sm:left-[-320px] md:left-[-360px] w-[290px] sm:w-[350px] p-4 rounded-2xl border shadow-2xl backdrop-blur-xl transition-all duration-500 transform scale-95 opacity-0 pointer-events-auto"
+        style="background-color: rgba(18, 19, 22, 0.96); border-color: rgba(225, 29, 72, 0.45); box-shadow: 0 20px 40px -10px rgba(225, 29, 72, 0.2), 0 10px 25px -5px rgba(0,0,0,0.85);">
+
+        <!-- Bubble Pointer Arrow -->
+        <div class="absolute -top-2 right-12 sm:right-auto sm:-right-2 sm:top-8 w-4 h-4 rotate-45 border-t border-l sm:border-t-0 sm:border-r sm:border-t"
+          style="background-color: rgba(18, 19, 22, 0.96); border-color: rgba(225, 29, 72, 0.45);"></div>
+
+        <div class="relative z-10 space-y-2.5">
+          <!-- Bubble Header -->
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span class="text-sm">🕷️</span>
+              <span class="text-[11px] font-mono font-bold tracking-wider text-rose-500 uppercase">SPIDER-MAN</span>
+              <span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-semibold bg-rose-500/15 text-rose-400 border border-rose-500/25">HERO GREETING</span>
+            </div>
+            <button onclick="dismissSpidey()" class="text-stone-400 hover:text-white text-xs p-1 cursor-pointer transition"
+              title="Dismiss Spidey">✕</button>
+          </div>
+
+          <!-- Greeting Copy -->
+          <p id="spidey-speech-text" class="text-xs sm:text-[13px] leading-relaxed text-stone-200 font-sans">
+            Hey there, web crawler! 🕸️ Welcome to <strong>Aakash Patwa's</strong> portfolio! Looking for someone who can spin resilient Java microservices, Apache Kafka pipelines, and distributed systems? You swung into the right place!
+          </p>
+
+          <!-- Interactive Action Buttons -->
+          <div class="flex flex-wrap items-center gap-1.5 pt-1.5 border-t border-white/10 text-[11px] font-mono">
+            <button onclick="dismissSpidey()"
+              class="px-2.5 py-1.5 rounded-lg font-bold text-white bg-rose-600 hover:bg-rose-500 transition shadow-sm cursor-pointer flex items-center gap-1">
+              <span>👋 Thanks, Spidey!</span>
+            </button>
+            <button onclick="spideyPlayMusic()"
+              class="px-2.5 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 text-stone-300 transition cursor-pointer flex items-center gap-1"
+              title="Play 'All The Stars' background music">
+              <span>🎵 Play Track</span>
+            </button>
+            <button onclick="spideyOpenChat()"
+              class="px-2.5 py-1.5 rounded-lg border border-sky-500/30 bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 transition cursor-pointer flex items-center gap-1">
+              <span>💬 Ask AI</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
   <!-- ==========================================================
        TOP NAVIGATION (CLEAN MINIMALIST BAR)
@@ -1553,15 +1726,24 @@
 
     </div>
 
-    <!-- Floating Launcher Trigger Button -->
-    <button id="chat-launcher-btn" onclick="toggleProfileChat()"
-      class="flex items-center gap-2.5 px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 text-white font-mono text-xs font-semibold cursor-pointer border bg-sky-500 border-white/20">
-      <span class="relative flex h-2.5 w-2.5">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-      </span>
-      <span id="chat-launcher-label">💬 Ask Profile AI</span>
-    </button>
+    <!-- Floating Launcher Trigger Buttons (Spidey & AI Chat) -->
+    <div class="flex items-center gap-2">
+      <button id="call-spidey-btn" onclick="summonSpiderman()"
+        class="flex items-center gap-2 px-3.5 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 text-white font-mono text-xs font-semibold cursor-pointer border bg-rose-600 border-rose-400/40 hover:bg-rose-500"
+        title="Call Spider-Man! (or press 'S' on your keyboard)">
+        <span>🕷️</span>
+        <span class="hidden sm:inline">Call Spidey</span>
+      </button>
+
+      <button id="chat-launcher-btn" onclick="toggleProfileChat()"
+        class="flex items-center gap-2.5 px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 text-white font-mono text-xs font-semibold cursor-pointer border bg-sky-500 border-white/20">
+        <span class="relative flex h-2.5 w-2.5">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+        </span>
+        <span id="chat-launcher-label">💬 Ask Profile AI</span>
+      </button>
+    </div>
 
   </div>
 
@@ -1896,6 +2078,133 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
       chatMessages.appendChild(msgDiv);
       scrollToBottom();
     }
+
+    // ==========================================================
+    // SPIDER-MAN GREETING CONTROLLER & AUDIO EFFECTS
+    // ==========================================================
+    let spideyTimeout = null;
+    let isSpideyVisible = false;
+
+    function playThwipSound() {
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return;
+        const ctx = new AudioContextClass();
+        if (ctx.state === 'suspended') ctx.resume();
+
+        // Synthesize web-shooter "THWIP!" using dual oscillators
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(950, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 0.16);
+
+        gain.gain.setValueAtTime(0.2, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.16);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        osc.start();
+        osc.stop(ctx.currentTime + 0.16);
+      } catch (err) {
+        // Fallback silently if audio context is blocked
+      }
+    }
+
+    function summonSpiderman() {
+      const container = document.getElementById('spidey-greeting-container');
+      const bubble = document.getElementById('spidey-speech-bubble');
+      if (!container || !bubble) return;
+
+      isSpideyVisible = true;
+      playThwipSound();
+
+      // Slide down from ceiling
+      container.style.transform = 'translateY(0)';
+
+      // Open speech bubble with slight delay after landing
+      setTimeout(() => {
+        bubble.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
+        bubble.classList.add('opacity-100', 'scale-100');
+      }, 700);
+
+      // Auto-retract after 14 seconds if no interaction occurs
+      clearTimeout(spideyTimeout);
+      spideyTimeout = setTimeout(() => {
+        if (isSpideyVisible) {
+          dismissSpidey();
+        }
+      }, 14000);
+    }
+
+    function dismissSpidey() {
+      const container = document.getElementById('spidey-greeting-container');
+      const bubble = document.getElementById('spidey-speech-bubble');
+      if (!container || !bubble) return;
+
+      playThwipSound();
+      bubble.classList.remove('opacity-100', 'scale-100');
+      bubble.classList.add('opacity-0', 'scale-95');
+
+      setTimeout(() => {
+        container.style.transform = 'translateY(-135%)';
+        isSpideyVisible = false;
+      }, 250);
+    }
+
+    function spideyReactionClick() {
+      const figure = document.getElementById('spidey-figure');
+      const text = document.getElementById('spidey-speech-text');
+      if (!figure) return;
+
+      playThwipSound();
+      figure.classList.remove('spidey-spinning');
+      void figure.offsetWidth; // force DOM reflow
+      figure.classList.add('spidey-spinning');
+
+      if (text) {
+        const spiderQuotes = [
+          "Whoa! Spider-sense is tingling! 🕸️ Did you know Aakash tuned Kafka consumer group partitions to boost throughput by 35%?",
+          "Nice reflexes! ⚡ High concurrency and zero-loss message processing are Aakash's backend superpowers!",
+          "With great backend scale comes great architectural responsibility! Check out his Redis L2 cache setup below!",
+          "I swung all the way to Pune, India! Be sure to grab Aakash's 1-page CV before you swing away!"
+        ];
+        text.innerHTML = spiderQuotes[Math.floor(Math.random() * spiderQuotes.length)];
+      }
+    }
+
+    function spideyPlayMusic() {
+      togglePortfolioMusic();
+      const text = document.getElementById('spidey-speech-text');
+      if (text) {
+        text.innerHTML = "🎶 <em>'All the stars are closer...'</em> That's what I'm talking about! Enjoy the music while you browse!";
+      }
+      setTimeout(dismissSpidey, 2600);
+    }
+
+    function spideyOpenChat() {
+      dismissSpidey();
+      setTimeout(() => {
+        toggleProfileChat();
+      }, 350);
+    }
+
+    // Auto-summon Spider-Man 1 second after page loads
+    window.addEventListener('load', () => {
+      setTimeout(summonSpiderman, 1000);
+    });
+
+    // Keyboard shortcut 'S' to summon Spider-Man anytime!
+    window.addEventListener('keydown', (e) => {
+      if (e.key.toLowerCase() === 's' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+        if (!isSpideyVisible) {
+          summonSpiderman();
+        } else {
+          dismissSpidey();
+        }
+      }
+    });
   </script>
 </body>
 
