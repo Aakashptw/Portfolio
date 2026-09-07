@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dev-dark">
+<html lang="en" data-theme="obsidian-dark">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Aakash Patwa | Senior Java Backend & Distributed Systems Engineer</title>
+  <title>Aakash Patwa — Senior Java Backend & Distributed Systems Engineer</title>
   <meta name="description"
-    content="Portfolio of Aakash Patwa - Senior Java Backend Developer with 4+ years of experience at Tata Consultancy Services specializing in Spring Boot, Apache Kafka, Distributed Systems, Redis L2 Caching, and High-Throughput Microservices." />
+    content="Portfolio of Aakash Patwa, Senior Java Backend Developer with 4+ years of experience at Tata Consultancy Services specializing in Spring Boot, Apache Kafka, Distributed Systems, Redis L2 Caching, and High-Throughput Microservices." />
 
-  <!-- Google Fonts: Plus Jakarta Sans, Inter, JetBrains Mono -->
+  <!-- Google Fonts: Playfair Display (Editorial Display Serif), Inter (Clean Modern Sans), JetBrains Mono (Technical Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap"
     rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
@@ -23,8 +23,8 @@
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
-            tech: ['Inter', '"Plus Jakarta Sans"', 'sans-serif'],
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
             mono: ['"JetBrains Mono"', 'monospace'],
           },
         }
@@ -34,114 +34,101 @@
 
   <style>
     /* ==========================================================
-       SOFTWARE ENGINEER & DEVELOPER THEMES
+       EDITORIAL PORTFOLIO DESIGN SYSTEM (DNYANESH GORE STYLE)
        ========================================================== */
-    :root[data-theme="dev-dark"] {
-      --bg-page: #0a0f1d;
-      --bg-card: rgba(15, 23, 42, 0.82);
-      --bg-card-solid: #0f172a;
-      --bg-card-subtle: rgba(30, 41, 59, 0.7);
-      --border-color: rgba(51, 65, 85, 0.65);
-      --border-accent: #38bdf8;
-      --text-title: #f8fafc;
-      --text-body: #cbd5e1;
-      --text-muted: #94a3b8;
-      --accent-primary: #0ea5e9;
-      --accent-primary-hover: #38bdf8;
-      --accent-secondary: #10b981;
-      --accent-warm: #f59e0b;
-      --accent-tag: rgba(14, 165, 233, 0.12);
-      --accent-tag-text: #38bdf8;
-      --shadow-elevation: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
-      --grid-color: rgba(56, 189, 248, 0.045);
-      --glow-1: rgba(14, 165, 233, 0.12);
-      --glow-2: rgba(99, 102, 241, 0.08);
-      --code-bg: #090d16;
+    :root[data-theme="obsidian-dark"] {
+      --bg-page: #0a0b0d;
+      --bg-surface: #121316;
+      --bg-surface-subtle: #181a1e;
+      --bg-surface-elevated: #202328;
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(255, 255, 255, 0.22);
+      --text-hero: #ffffff;
+      --text-title: #f4f4f6;
+      --text-body: #a1a1aa;
+      --text-muted: #71717a;
+      --accent-primary: #38bdf8;
+      --accent-gold: #fbbf24;
+      --accent-emerald: #34d399;
+      --accent-tag-bg: rgba(255, 255, 255, 0.05);
+      --accent-tag-border: rgba(255, 255, 255, 0.1);
+      --shadow-elevation: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+      --ticker-bg: #121316;
+      --card-highlight: rgba(56, 189, 248, 0.08);
     }
 
-    :root[data-theme="matrix-terminal"] {
-      --bg-page: #06080d;
-      --bg-card: rgba(13, 17, 23, 0.9);
-      --bg-card-solid: #0d1117;
-      --bg-card-subtle: rgba(22, 27, 34, 0.8);
-      --border-color: #30363d;
-      --border-accent: #238636;
-      --text-title: #ffffff;
-      --text-body: #c9d1d9;
-      --text-muted: #8b949e;
-      --accent-primary: #2ea043;
-      --accent-primary-hover: #3fb950;
-      --accent-secondary: #58a6ff;
-      --accent-warm: #d29922;
-      --accent-tag: rgba(46, 160, 67, 0.16);
-      --accent-tag-text: #3fb950;
-      --shadow-elevation: 0 10px 30px -10px rgba(0, 0, 0, 0.8);
-      --grid-color: rgba(46, 160, 67, 0.045);
-      --glow-1: rgba(46, 160, 67, 0.1);
-      --glow-2: rgba(88, 166, 255, 0.06);
-      --code-bg: #05070a;
-    }
-
-    :root[data-theme="cloud-light"] {
-      --bg-page: #f8fafc;
-      --bg-card: #ffffff;
-      --bg-card-solid: #ffffff;
-      --bg-card-subtle: #f1f5f9;
-      --border-color: #e2e8f0;
-      --border-accent: #0284c7;
-      --text-title: #0f172a;
-      --text-body: #334155;
-      --text-muted: #64748b;
+    :root[data-theme="studio-light"] {
+      --bg-page: #faf9f6;
+      --bg-surface: #ffffff;
+      --bg-surface-subtle: #f4f3ef;
+      --bg-surface-elevated: #eae8e1;
+      --border-color: rgba(0, 0, 0, 0.09);
+      --border-accent: rgba(0, 0, 0, 0.25);
+      --text-hero: #111113;
+      --text-title: #18181b;
+      --text-body: #52525b;
+      --text-muted: #8b8b94;
       --accent-primary: #0284c7;
-      --accent-primary-hover: #0369a1;
-      --accent-secondary: #059669;
-      --accent-warm: #d97706;
-      --accent-tag: #e0f2fe;
-      --accent-tag-text: #0284c7;
-      --shadow-elevation: 0 4px 20px -2px rgba(15, 23, 42, 0.06);
-      --grid-color: rgba(14, 165, 233, 0.05);
-      --glow-1: rgba(14, 165, 233, 0.04);
-      --glow-2: rgba(99, 102, 241, 0.03);
-      --code-bg: #0f172a;
+      --accent-gold: #d97706;
+      --accent-emerald: #059669;
+      --accent-tag-bg: rgba(0, 0, 0, 0.04);
+      --accent-tag-border: rgba(0, 0, 0, 0.08);
+      --shadow-elevation: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+      --ticker-bg: #f4f3ef;
+      --card-highlight: rgba(2, 132, 199, 0.05);
     }
 
     body {
       background-color: var(--bg-page);
       color: var(--text-body);
-      font-family: 'Plus Jakarta Sans', Inter, sans-serif;
+      font-family: 'Inter', system-ui, sans-serif;
       transition: background-color 0.3s ease, color 0.3s ease;
       line-height: 1.65;
     }
 
-    /* Modern Developer Card */
-    .dev-card {
-      background-color: var(--bg-card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid var(--border-color);
-      box-shadow: var(--shadow-elevation);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Editorial display headings */
+    .font-editorial {
+      font-family: 'Playfair Display', Georgia, serif;
     }
 
-    .dev-card:hover {
-      border-color: var(--border-accent);
-      box-shadow: 0 12px 35px -10px rgba(14, 165, 233, 0.12);
-    }
-
-    /* Subtle tech grid background */
-    .tech-grid {
-      background-image: linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-                        linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    /* Subtle grid texture */
+    .editorial-grid {
+      background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
       background-size: 32px 32px;
     }
 
-    /* Ambient Glow Blobs */
-    .glow-orb-1 {
-      background: radial-gradient(circle, var(--glow-1) 0%, transparent 70%);
+    /* Editorial Card */
+    .editorial-card {
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-elevation);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .glow-orb-2 {
-      background: radial-gradient(circle, var(--glow-2) 0%, transparent 70%);
+    .editorial-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    /* Continuous Marquee Animation */
+    @keyframes marqueeScroll {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .animate-marquee {
+      display: flex;
+      width: max-content;
+      animation: marqueeScroll 40s linear infinite;
+    }
+
+    .animate-marquee:hover {
+      animation-play-state: paused;
     }
 
     /* Custom Scrollbar */
@@ -162,7 +149,7 @@
       background: var(--accent-primary);
     }
 
-    /* Chatbot Utility Styles */
+    /* Chatbot Utilities */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -173,10 +160,14 @@
     }
 
     @keyframes chatDotPulse {
-      0%, 80%, 100% {
+
+      0%,
+      80%,
+      100% {
         transform: scale(0.6);
         opacity: 0.4;
       }
+
       40% {
         transform: scale(1);
         opacity: 1;
@@ -187,8 +178,13 @@
       animation: chatDotPulse 1.4s infinite ease-in-out both;
     }
 
-    .chat-dot:nth-child(1) { animation-delay: -0.32s; }
-    .chat-dot:nth-child(2) { animation-delay: -0.16s; }
+    .chat-dot:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .chat-dot:nth-child(2) {
+      animation-delay: -0.16s;
+    }
 
     /* ==========================================================
        PRINT STYLING: SINGLE-PAGE STRUCTURED RESUME
@@ -225,15 +221,12 @@
         line-height: 1.25 !important;
       }
 
-      /* Hide entire web portfolio and interactive chrome during print */
       header,
       #web-dossier,
       #photo-modal,
       #resume-modal,
       footer,
-      .tech-grid,
-      .glow-orb-1,
-      .glow-orb-2,
+      .editorial-grid,
       .no-print {
         display: none !important;
         visibility: hidden !important;
@@ -243,7 +236,6 @@
         overflow: hidden !important;
       }
 
-      /* Render dedicated structured resume */
       #print-resume {
         display: block !important;
         visibility: visible !important;
@@ -316,89 +308,77 @@
 
 <body class="selection:bg-sky-500 selection:text-white antialiased min-h-screen relative overflow-x-hidden">
 
-  <!-- Background Tech Grid & Ambient Glows -->
-  <div class="fixed inset-0 tech-grid pointer-events-none z-0"></div>
-  <div class="fixed -top-40 -left-40 w-96 h-96 glow-orb-1 rounded-full pointer-events-none z-0 blur-3xl"></div>
-  <div class="fixed top-1/3 -right-40 w-96 h-96 glow-orb-2 rounded-full pointer-events-none z-0 blur-3xl"></div>
+  <!-- Background Grid Texture -->
+  <div class="fixed inset-0 editorial-grid pointer-events-none z-0 opacity-40"></div>
 
-  <!-- TOP APPBAR (FULL-WIDTH DEVELOPER CONSOLE BAR) -->
+  <!-- ==========================================================
+       TOP NAVIGATION (CLEAN MINIMALIST BAR)
+       ========================================================== -->
   <header class="sticky top-0 z-40 backdrop-blur-xl border-b transition-colors duration-300 w-full"
-    style="background-color: rgba(var(--bg-page), 0.85); border-color: var(--border-color);">
-    <div class="max-w-[1700px] mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
+    style="background-color: rgba(var(--bg-page), 0.88); border-color: var(--border-color);">
+    <div class="max-w-[1500px] mx-auto px-4 sm:px-8 py-4 flex items-center justify-between">
 
-      <!-- Developer Monogram & Role -->
-      <a href="#overview" class="flex items-center gap-3.5 group">
+      <!-- Monogram & Role -->
+      <a href="#hero" class="flex items-center gap-3.5 group">
         <div
-          class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center font-mono text-sm font-bold text-white shadow-lg shadow-sky-500/25 transition-transform group-hover:scale-105 border border-white/15">
-          &lt;/&gt;
+          class="w-9 h-9 rounded-xl border flex items-center justify-center font-serif text-sm font-bold text-white transition-transform group-hover:scale-105"
+          style="background-color: var(--bg-surface); border-color: var(--border-color); color: var(--text-hero);">
+          AP
         </div>
         <div>
-          <div class="flex items-center gap-2">
-            <span class="block text-base sm:text-lg font-bold tracking-tight" style="color: var(--text-title);">
-              Aakash Patwa
-            </span>
-            <span class="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-mono font-semibold border"
-              style="background-color: var(--accent-tag); border-color: var(--accent-primary); color: var(--accent-tag-text);">
-              v4.2.0 • SDE
-            </span>
-          </div>
-          <span class="block text-[11px] font-mono tracking-wider uppercase font-semibold"
-            style="color: var(--accent-primary);">
-            Senior Java Backend & Distributed Systems Engineer
+          <span class="block text-sm sm:text-base font-bold tracking-tight" style="color: var(--text-hero);">
+            Aakash Patwa
+          </span>
+          <span class="block text-[11px] font-mono tracking-wider uppercase text-muted"
+            style="color: var(--text-muted);">
+            Java Backend · Distributed Systems
           </span>
         </div>
       </a>
 
       <!-- Quick Nav Links -->
-      <nav class="hidden lg:flex items-center space-x-7 text-xs font-mono font-semibold uppercase tracking-wider">
-        <a href="#overview" class="hover:text-sky-400 transition" style="color: var(--text-muted);">// Overview</a>
-        <a href="#tech-stack" class="hover:text-sky-400 transition" style="color: var(--text-muted);">// Tech Stack</a>
-        <a href="#systems" class="hover:text-sky-400 transition" style="color: var(--text-muted);">// Systems</a>
-        <a href="#experience" class="hover:text-sky-400 transition" style="color: var(--text-muted);">// Experience</a>
-        <a href="#leadership" class="hover:text-sky-400 transition" style="color: var(--text-muted);">// Leadership</a>
-        <a href="#education" class="hover:text-sky-400 transition" style="color: var(--text-muted);">// Education</a>
+      <nav class="hidden md:flex items-center space-x-7 text-xs font-mono font-medium tracking-wide">
+        <a href="#work" class="hover:text-sky-400 transition" style="color: var(--text-muted);">Work</a>
+        <a href="#metrics" class="hover:text-sky-400 transition" style="color: var(--text-muted);">Impact</a>
+        <a href="#architecture" class="hover:text-sky-400 transition"
+          style="color: var(--text-muted);">Architecture</a>
+        <a href="#experience" class="hover:text-sky-400 transition" style="color: var(--text-muted);">Experience</a>
+        <a href="#about" class="hover:text-sky-400 transition" style="color: var(--text-muted);">About</a>
+        <a href="#contact" class="hover:text-sky-400 transition" style="color: var(--text-muted);">Contact</a>
       </nav>
 
-      <!-- Utilities -->
+      <!-- Utilities (Music, Theme & CV) -->
       <div class="flex items-center gap-2.5 sm:gap-3">
+
         <!-- Background Music Player Header Pill -->
         <button id="music-header-btn" onclick="togglePortfolioMusic()"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold border transition cursor-pointer hover:border-sky-400 group shadow-sm"
-          style="background-color: var(--bg-card-subtle); color: var(--text-title); border-color: var(--border-color);"
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono font-semibold border transition cursor-pointer hover:border-sky-400 group shadow-sm"
+          style="background-color: var(--bg-surface); color: var(--text-title); border-color: var(--border-color);"
           title="Play 'All The Stars' by Kendrick Lamar & SZA">
-          <span class="text-sky-400 font-bold">🎵</span>
-          <span id="music-header-icon" class="text-sky-400 font-bold">▶</span>
-          <span id="music-header-label" class="inline">Play Music</span>
-          <div id="music-header-bars" class="hidden items-end gap-0.5 h-3.5">
+          <span class="text-sky-400 text-xs">🎵</span>
+          <span id="music-header-icon" class="text-sky-400 font-bold text-[10px]">▶</span>
+          <span id="music-header-label" class="hidden sm:inline text-[11px]">All The Stars</span>
+          <div id="music-header-bars" class="hidden items-end gap-0.5 h-3">
             <span class="w-0.5 bg-sky-400 rounded-full h-2 animate-pulse"></span>
-            <span class="w-0.5 bg-emerald-400 rounded-full h-3.5 animate-pulse" style="animation-delay: 0.15s"></span>
+            <span class="w-0.5 bg-emerald-400 rounded-full h-3 animate-pulse" style="animation-delay: 0.15s"></span>
             <span class="w-0.5 bg-sky-400 rounded-full h-1.5 animate-pulse" style="animation-delay: 0.3s"></span>
-            <span class="w-0.5 bg-emerald-400 rounded-full h-3 animate-pulse" style="animation-delay: 0.45s"></span>
+            <span class="w-0.5 bg-emerald-400 rounded-full h-2.5 animate-pulse" style="animation-delay: 0.45s"></span>
           </div>
         </button>
 
-        <!-- Developer Theme Selector -->
+        <!-- Theme Selector -->
         <select id="theme-selector"
-          class="text-xs font-mono rounded-lg px-3 py-1.5 border transition cursor-pointer focus:outline-none"
-          style="background-color: var(--bg-card-subtle); color: var(--text-title); border-color: var(--border-color);">
-          <option value="dev-dark">⚡ Cyber Slate (Dark)</option>
-          <option value="matrix-terminal">🟢 Terminal Dark</option>
-          <option value="cloud-light">☀️ Cloud Light</option>
+          class="text-xs font-mono rounded-full px-3 py-1.5 border transition cursor-pointer focus:outline-none"
+          style="background-color: var(--bg-surface); color: var(--text-title); border-color: var(--border-color);">
+          <option value="obsidian-dark">🌙 Dark Obsidian</option>
+          <option value="studio-light">☀️ Studio Light</option>
         </select>
 
-        <!-- View & Download Resume -->
-        <button onclick="openResumeModal()"
-          class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold border transition cursor-pointer hover:border-sky-400"
-          style="background-color: var(--bg-card); color: var(--text-title); border-color: var(--border-color);">
-          <span>📄</span>
-          <span>View Resume</span>
-        </button>
-
+        <!-- Download CV Action -->
         <button id="download-cv-btn" onclick="window.print()"
-          class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-lg text-xs font-mono font-semibold text-white transition shadow-sm hover:opacity-90 cursor-pointer"
-          style="background-color: var(--accent-primary);">
+          class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold text-white transition shadow-sm hover:opacity-90 cursor-pointer bg-sky-500">
           <span>📥</span>
-          <span>Download CV</span>
+          <span>CV</span>
         </button>
       </div>
 
@@ -406,688 +386,729 @@
   </header>
 
   <!-- ==========================================================
-       FULL-SCREEN WIDESCREEN WORKSPACE (SIDEBAR + MAIN STAGE)
+       MAIN CONTENT CONTAINER
        ========================================================== -->
-  <main id="web-dossier" class="relative z-10 max-w-[1700px] mx-auto px-4 sm:px-8 py-8">
-    <div class="flex flex-col lg:flex-row gap-8 items-start">
+  <main id="web-dossier" class="relative z-10 max-w-[1500px] mx-auto px-4 sm:px-8 py-10 sm:py-16 space-y-24 sm:space-y-32">
 
-      <!-- ========================================================
-           STICKY LEFT COLUMN (DEVELOPER PROFILE & TELEMETRY)
-           ======================================================== -->
-      <aside class="w-full lg:w-80 xl:w-96 shrink-0 lg:sticky lg:top-24 space-y-6">
+    <!-- ========================================================
+         HERO SECTION (DNYANESH GORE STYLE: BIG STATEMENT & BADGE)
+         ======================================================== -->
+    <section id="hero" class="space-y-10 sm:space-y-12">
+      <!-- Tag / Category Pill -->
+      <div class="flex flex-wrap items-center gap-3 text-xs font-mono" style="color: var(--text-muted);">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border"
+          style="background-color: var(--accent-tag-bg); border-color: var(--accent-tag-border); color: var(--text-title);">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Tata Consultancy Services · Senior Backend Developer</span>
+        </div>
+        <span class="text-stone-500">·</span>
+        <span>Distributed Systems & Microservices (4+ Yrs)</span>
+        <span class="text-stone-500">·</span>
+        <span>Pune, India</span>
+      </div>
 
-        <!-- Engineer Profile Card -->
-        <div class="dev-card rounded-2xl p-6 space-y-5 text-center relative overflow-hidden">
+      <!-- Giant Editorial Statement (Dnyanesh Gore Signature Aesthetic) -->
+      <div class="max-w-5xl space-y-6">
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.08] font-sans"
+          style="color: var(--text-hero);">
+          I architect <span class="font-editorial italic font-normal text-sky-400">high-concurrency</span> microservices
+          and distributed systems that make complex enterprise platforms feel <span
+            class="font-editorial italic font-normal underline decoration-sky-400/40 underline-offset-8">simple</span>.
+        </h1>
 
-          <!-- Professional Headshot Frame -->
-          <div
-            class="relative mx-auto w-48 h-60 sm:w-56 sm:h-72 rounded-xl overflow-hidden border-2 shadow-xl cursor-pointer group"
-            onclick="openPhotoModal()" style="border-color: var(--border-color);">
-            <img id="profile-img" src="profile_original.png" alt="Aakash Patwa - Senior Java Backend Developer"
-              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-3">
-              <span class="text-white text-xs font-mono flex items-center gap-1">
-                <span>🔍</span> Click to Expand
-              </span>
-            </div>
-            <!-- High-tech corner accents -->
-            <div class="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-sky-400"></div>
-            <div class="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-sky-400"></div>
-            <div class="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-sky-400"></div>
-            <div class="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-sky-400"></div>
-          </div>
+        <p class="text-lg sm:text-xl leading-relaxed max-w-3xl" style="color: var(--text-body);">
+          Senior Java Backend Engineer with <strong>4+ years of hands-on experience</strong> at Tata Consultancy
+          Services. Specializing in resilient microservices, high-throughput Apache Kafka streaming topologies, Redis
+          distributed L2 caching, zero-downtime database migrations, and cloud-native architecture.
+        </p>
+      </div>
 
-          <!-- Engineer Names & Subtitle -->
-          <div class="space-y-1.5">
-            <h2 class="text-2xl font-bold tracking-tight" style="color: var(--text-title);">
-              Aakash Patwa
-            </h2>
-            <p class="text-xs font-mono font-medium" style="color: var(--accent-primary);">
-              Senior Java Backend Developer • 4+ Yrs Exp
-            </p>
-            <p class="text-xs font-mono text-muted" style="color: var(--text-muted);">
-              Distributed Systems • High-Throughput Microservices • Kafka & Redis
-            </p>
-          </div>
+      <!-- Hero Actions & Profile Avatar Card -->
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-4 border-t"
+        style="border-color: var(--border-color);">
 
-          <!-- Active Industry Status Badge -->
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono font-medium border"
-            style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">
-            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            <span>Tata Consultancy Services</span>
-          </div>
-
-          <!-- Communication Coordinates -->
-          <div class="space-y-2 text-xs font-mono text-left pt-2 border-t" style="border-color: var(--border-color);">
-            <div
-              class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition">
-              <span class="text-muted" style="color: var(--text-muted);">EMAIL:</span>
-              <a href="mailto:ptwaakash@gmail.com" class="font-semibold truncate hover:underline hover:text-sky-400"
-                style="color: var(--text-title);">ptwaakash@gmail.com</a>
-            </div>
-            <div
-              class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition">
-              <span class="text-muted" style="color: var(--text-muted);">PHONE:</span>
-              <a href="tel:+918530603015" class="font-semibold hover:underline hover:text-sky-400" style="color: var(--text-title);">+91
-                8530603015</a>
-            </div>
-            <div
-              class="flex items-center justify-between p-2 rounded hover:bg-white/5 transition">
-              <span class="text-muted" style="color: var(--text-muted);">LOCATION:</span>
-              <span class="font-semibold" style="color: var(--text-title);">Pune, India</span>
-            </div>
-          </div>
-
-          <!-- Quick Action Buttons -->
-          <div class="grid grid-cols-2 gap-2 pt-2">
-            <a href="https://www.linkedin.com/in/aakash-kumar-58533b145/" target="_blank"
-              class="px-3 py-2 rounded-lg border text-xs font-mono font-semibold flex items-center justify-center gap-1.5 hover:border-sky-400 transition"
-              style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">
-              <span>🔗</span> LinkedIn
-            </a>
-            <a href="https://github.com/Aakashptw" target="_blank"
-              class="px-3 py-2 rounded-lg border text-xs font-mono font-semibold flex items-center justify-center gap-1.5 hover:border-sky-400 transition"
-              style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">
-              <span>🐙</span> GitHub
-            </a>
-          </div>
-
-          <!-- View & Download Resume Buttons -->
-          <div class="grid grid-cols-2 gap-2">
-            <button onclick="openResumeModal()"
-              class="px-3 py-2 rounded-lg border text-xs font-mono font-semibold flex items-center justify-center gap-1.5 hover:border-sky-400 transition cursor-pointer"
-              style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">
-              <span>👁️</span> View Resume
-            </button>
-            <button onclick="window.print()"
-              class="px-3 py-2 rounded-lg text-xs font-mono font-semibold flex items-center justify-center gap-1.5 text-white shadow-sm hover:opacity-90 transition cursor-pointer text-center"
-              style="background-color: var(--accent-primary);">
-              <span>📥</span> Download PDF
-            </button>
-          </div>
-
-          <!-- Tech Summary Copy Button -->
-          <button onclick="copyTechSummary()"
-            class="w-full py-2.5 rounded-lg border text-xs font-mono font-semibold flex items-center justify-center gap-2 hover:border-sky-400 transition cursor-pointer"
-            style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--accent-primary);">
-            <span>📋</span> Copy Tech Profile Summary
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="#work"
+            class="px-5 py-3 rounded-full text-xs font-mono font-bold text-white transition shadow-sm hover:opacity-90 flex items-center gap-2 bg-sky-500">
+            <span>View Selected Work</span>
+            <span>↓</span>
+          </a>
+          <button onclick="openResumeModal()"
+            class="px-5 py-3 rounded-full text-xs font-mono font-semibold border transition hover:border-sky-400 flex items-center gap-2"
+            style="background-color: var(--bg-surface); border-color: var(--border-color); color: var(--text-title);">
+            <span>👁️</span>
+            <span>View Resume PDF</span>
           </button>
-
-          <!-- Interactive Music Track Player Pill in Profile Card -->
-          <div class="pt-1">
-            <button id="music-profile-btn" onclick="togglePortfolioMusic()"
-              class="w-full py-2.5 px-3 rounded-lg border text-xs font-mono font-semibold flex items-center justify-between gap-2 hover:border-sky-400 transition cursor-pointer group"
-              style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">
-              <div class="flex items-center gap-2 truncate">
-                <span class="text-sm text-sky-400">🎵</span>
-                <span id="music-profile-label" class="truncate font-sans font-semibold text-xs">All The Stars</span>
-              </div>
-              <div class="flex items-center gap-2 shrink-0">
-                <div id="music-profile-bars" class="hidden items-end gap-0.5 h-3">
-                  <span class="w-0.5 bg-sky-400 rounded-full h-2 animate-pulse"></span>
-                  <span class="w-0.5 bg-emerald-400 rounded-full h-3 animate-pulse" style="animation-delay: 0.15s"></span>
-                  <span class="w-0.5 bg-sky-400 rounded-full h-1.5 animate-pulse" style="animation-delay: 0.3s"></span>
-                </div>
-                <span id="music-profile-action" class="px-2 py-0.5 rounded text-[10px] font-bold text-white shadow-sm"
-                  style="background-color: var(--accent-primary);">▶ Play</span>
-              </div>
-            </button>
-          </div>
-
+          <a href="#contact"
+            class="px-5 py-3 rounded-full text-xs font-mono font-semibold border transition hover:border-sky-400 flex items-center gap-2"
+            style="background-color: var(--bg-surface); border-color: var(--border-color); color: var(--text-title);">
+            <span>Let's Connect</span>
+            <span>↗</span>
+          </a>
         </div>
 
-        <!-- Engineering Telemetry Card (Cloud Monitoring Dashboard Style) -->
-        <div class="dev-card rounded-2xl p-5 space-y-3">
-          <div class="flex items-center justify-between">
-            <div class="text-[11px] font-mono uppercase tracking-widest font-semibold flex items-center gap-2"
-              style="color: var(--accent-primary);">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-              ENGINEERING TELEMETRY
-            </div>
-            <span class="text-[10px] font-mono px-2 py-0.5 rounded border"
-              style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-muted);">
-              PROD METRICS
-            </span>
+        <!-- Interactive Portrait Card with Original Photo -->
+        <div class="flex items-center gap-3.5 p-2 rounded-2xl border cursor-pointer group"
+          onclick="openPhotoModal()"
+          style="background-color: var(--bg-surface); border-color: var(--border-color);">
+          <div class="w-14 h-14 rounded-xl overflow-hidden border shrink-0"
+            style="border-color: var(--border-color);">
+            <img id="profile-img" src="profile_original.png" alt="Aakash Patwa"
+              class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110" />
           </div>
-
-          <div class="grid grid-cols-2 gap-3 text-center">
-            <div class="p-3 rounded-lg border"
-              style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
-              <div class="text-2xl font-mono font-bold" style="color: var(--accent-primary);">+35%</div>
-              <div class="text-[10px] font-mono mt-0.5" style="color: var(--text-muted);">Kafka Event Throughput</div>
-            </div>
-            <div class="p-3 rounded-lg border"
-              style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
-              <div class="text-2xl font-mono font-bold text-emerald-400">-25%</div>
-              <div class="text-[10px] font-mono mt-0.5" style="color: var(--text-muted);">Query Latency (Redis)</div>
-            </div>
-            <div class="p-3 rounded-lg border"
-              style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
-              <div class="text-2xl font-mono font-bold" style="color: var(--accent-warm);">+40%</div>
-              <div class="text-[10px] font-mono mt-0.5" style="color: var(--text-muted);">CI/CD Cadence</div>
-            </div>
-            <div class="p-3 rounded-lg border"
-              style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
-              <div class="text-2xl font-mono font-bold" style="color: var(--text-title);">100%</div>
-              <div class="text-[10px] font-mono mt-0.5" style="color: var(--text-muted);">DB Cutover Integrity</div>
-            </div>
+          <div class="pr-2">
+            <span class="block text-xs font-bold" style="color: var(--text-title);">Aakash Patwa</span>
+            <span class="block text-[10px] font-mono text-muted" style="color: var(--text-muted);">
+              🔍 Click to expand portrait
+            </span>
           </div>
         </div>
-
-      </aside>
-
-      <!-- ========================================================
-           RIGHT MAIN STAGE (FULL WIDESCREEN WORKSPACE)
-           ======================================================== -->
-      <div class="flex-1 space-y-12 w-full">
-
-        <!-- ======================================================
-             SECTION: PROFILE & ARCHITECTURE PHILOSOPHY
-             ====================================================== -->
-        <section id="overview" class="dev-card rounded-2xl p-8 sm:p-10 space-y-6 relative overflow-hidden">
-          <!-- Ambient card top border gradient -->
-          <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 via-indigo-500 to-emerald-500"></div>
-
-          <div class="space-y-2 border-b pb-4" style="border-color: var(--border-color);">
-            <div
-              class="inline-flex items-center gap-2 text-xs font-mono px-3 py-1 rounded-full uppercase tracking-wider font-semibold border"
-              style="background-color: var(--accent-tag); border-color: var(--accent-primary); color: var(--accent-tag-text);">
-              <span>//</span> Senior Backend & Systems Architecture Profile
-            </div>
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight" style="color: var(--text-title);">
-              Engineering Profile & Architecture Philosophy
-            </h2>
-            <p class="text-sm sm:text-base font-mono" style="color: var(--accent-primary);">
-              High-Concurrency Java Microservices • Event Streaming • Distributed Caching & Zero-Downtime Migration
-            </p>
-          </div>
-
-          <p class="text-sm sm:text-base leading-relaxed text-justify" style="color: var(--text-body);">
-            Backend & Distributed Systems Engineer with <strong>4+ years of hands-on industry experience</strong> at
-            Tata Consultancy Services specializing in architecting resilient microservices, high-throughput
-            event-driven architectures, and distributed caching systems.
-            Core technical mastery spans <strong>Java (8 / 11 / 17 / 21), Spring Boot, Spring Cloud, Apache Kafka,
-              Redis, and PostgreSQL</strong>.
-            Proven track record engineering high-throughput streaming pipelines that expanded system throughput by
-            <strong style="color: var(--accent-primary);">+35%</strong>, introducing Redis L2 caching that cut query
-            latency by <strong style="color: var(--accent-secondary);">-25%</strong>, executing zero-downtime database
-            migrations with <strong style="color: var(--text-title);">100% data integrity</strong>, and accelerating
-            CI/CD release velocity by <strong style="color: var(--accent-warm);">+40%</strong>.
-            Passionate about clean domain-driven architecture, robust REST API design, and building high-performance
-            enterprise applications.
-          </p>
-        </section>
-
-        <!-- ======================================================
-             SECTION: TECHNICAL STACK & SYSTEMS EXPERTISE
-             ====================================================== -->
-        <section id="tech-stack" class="space-y-6">
-          <div class="border-b pb-3 flex items-center justify-between" style="border-color: var(--border-color);">
-            <div>
-              <h3 class="text-xs font-mono uppercase tracking-widest font-semibold" style="color: var(--accent-primary);">
-                // ARCHITECTURE & TOOLS</h3>
-              <h2 class="text-2xl sm:text-3xl font-bold" style="color: var(--text-title);">Technical Stack & Systems
-                Expertise</h2>
-            </div>
-            <span class="text-xs font-mono text-muted hidden sm:inline" style="color: var(--text-muted);">
-              4 Core Specialization Areas
-            </span>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            <!-- Competency 1 -->
-            <div class="dev-card rounded-xl p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <div class="text-xs font-mono uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-                  AREA 01 // EVENT STREAMING
-                </div>
-                <span class="text-base">⚡</span>
-              </div>
-              <h4 class="text-lg font-bold" style="color: var(--text-title);">Distributed Event Streaming &
-                High-Volume Queues</h4>
-              <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-body);">
-                Partitioning topologies, asynchronous consumer group rebalancing, and non-blocking backpressure
-                mechanisms in Apache Kafka. Designed to isolate computational tax and accounting microservices under
-                massive concurrent filings.
-              </p>
-              <div class="pt-2 flex flex-wrap gap-1.5 text-xs font-mono">
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Apache
-                  Kafka</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Kong
-                  Gateway</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Feign
-                  Client</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Resilience4J</span>
-              </div>
-            </div>
-
-            <!-- Competency 2 -->
-            <div class="dev-card rounded-xl p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <div class="text-xs font-mono uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-                  AREA 02 // PERSISTENCE & CACHE
-                </div>
-                <span class="text-base">🚀</span>
-              </div>
-              <h4 class="text-lg font-bold" style="color: var(--text-title);">Distributed Caching & Relational
-                Consistency</h4>
-              <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-body);">
-                Multi-tier memory caching, dynamic TTL eviction policies, and Hibernate/JPA object-relational mapping
-                performance over PostgreSQL. Alleviated database contention by 20% while speeding query returns by 25%.
-              </p>
-              <div class="pt-2 flex flex-wrap gap-1.5 text-xs font-mono">
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Redis L2
-                  Cache</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">PostgreSQL</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Hibernate /
-                  JPA</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">DB2 Cutover</span>
-              </div>
-            </div>
-
-            <!-- Competency 3 -->
-            <div class="dev-card rounded-xl p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <div class="text-xs font-mono uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-                  AREA 03 // MICROSERVICES & API
-                </div>
-                <span class="text-base">🛠️</span>
-              </div>
-              <h4 class="text-lg font-bold" style="color: var(--text-title);">Cloud-Native Microservices & API
-                Engineering</h4>
-              <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-body);">
-                Domain-driven service boundaries with Spring Boot, Spring Cloud, OpenAPI/Swagger documentation, Docker
-                containerization, and real-time Server-Sent Events (SSE) token streaming.
-              </p>
-              <div class="pt-2 flex flex-wrap gap-1.5 text-xs font-mono">
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Java 11 / 17 /
-                  21</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Spring Boot</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Spring
-                  Cloud</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">REST APIs</span>
-              </div>
-            </div>
-
-            <!-- Competency 4 -->
-            <div class="dev-card rounded-xl p-6 space-y-3">
-              <div class="flex items-center justify-between">
-                <div class="text-xs font-mono uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-                  AREA 04 // DEVOPS & OBSERVABILITY
-                </div>
-                <span class="text-base">📊</span>
-              </div>
-              <h4 class="text-lg font-bold" style="color: var(--text-title);">DevOps, Infrastructure & Observability</h4>
-              <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-body);">
-                Repeatable container virtualization with Docker on Linux environments, Infrastructure as Code with
-                Terraform and Ansible, and production distributed telemetry via ELK Stack and Splunk (reducing MTTR by
-                25%).
-              </p>
-              <div class="pt-2 flex flex-wrap gap-1.5 text-xs font-mono">
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Docker /
-                  Linux</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Jenkins
-                  CI/CD</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">Terraform /
-                  Ansible</span>
-                <span class="px-2.5 py-1 rounded border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">ELK &
-                  Splunk</span>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ======================================================
-             SECTION: FEATURED PRODUCTION SYSTEMS & ARCHITECTURE
-             ====================================================== -->
-        <section id="systems" class="space-y-6">
-          <div class="border-b pb-3 flex items-center justify-between" style="border-color: var(--border-color);">
-            <div>
-              <h3 class="text-xs font-mono uppercase tracking-widest font-semibold" style="color: var(--accent-primary);">
-                // PRODUCTION PLATFORMS & ARCHITECTURE</h3>
-              <h2 class="text-2xl sm:text-3xl font-bold" style="color: var(--text-title);">Featured Systems &
-                Production Engineering</h2>
-            </div>
-            <span class="text-xs font-mono text-emerald-400 font-semibold flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              Live Architecture
-            </span>
-          </div>
-
-          <div class="space-y-6">
-
-            <!-- System 1: Ghana Revenue Authority Platform -->
-            <div class="dev-card rounded-2xl p-6 sm:p-8 space-y-4">
-              <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-mono"
-                style="color: var(--text-muted);">
-                <span class="px-2.5 py-0.5 rounded font-semibold border"
-                  style="background-color: var(--accent-tag); border-color: var(--accent-primary); color: var(--accent-tag-text);">
-                  ENTERPRISE PLATFORM // EVENT STREAMING
-                </span>
-                <span>Tata Consultancy Services • Ghana Revenue Authority (2025 – Present)</span>
-              </div>
-
-              <h4 class="text-xl sm:text-2xl font-bold leading-snug" style="color: var(--text-title);">
-                High-Throughput Asynchronous Event Streaming & Microservice Decoupling for Taxation Platforms
-              </h4>
-
-              <p class="text-xs font-mono" style="color: var(--accent-primary);">
-                <strong>Tech Stack:</strong> Java 11, Spring Boot, Spring Cloud, Apache Kafka, Redis, PostgreSQL, Kong
-                Gateway, Feign Client, Resilience4J
-              </p>
-
-              <p class="text-sm sm:text-base leading-relaxed text-justify" style="color: var(--text-body);">
-                <strong>Architecture Overview:</strong> Monolithic architectures in national revenue administrations
-                faced severe latency bottlenecks under seasonal tax filing deadlines. Spearheaded the microservice
-                decomposition and event-driven re-architecture using Java 11 and Spring Boot. Formulated asynchronous
-                Apache Kafka consumer topologies to isolate compute workflows, and abstracted microservice
-                intercommunication via Kong API Gateway and Feign Client.
-              </p>
-
-              <!-- Architecture Impact Highlights -->
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-                <div class="p-3 rounded-lg border text-center"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
-                  <div class="text-xl font-mono font-bold" style="color: var(--accent-primary);">+35%</div>
-                  <div class="text-[10px] font-mono mt-0.5" style="color: var(--text-muted);">Throughput (Kafka)</div>
-                </div>
-                <div class="p-3 rounded-lg border text-center"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
-                  <div class="text-xl font-mono font-bold text-emerald-400">-25%</div>
-                  <div class="text-[10px] font-mono mt-0.5" style="color: var(--text-muted);">Query Latency (Redis)</div>
-                </div>
-                <div class="p-3 rounded-lg border text-center"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
-                  <div class="text-xl font-mono font-bold" style="color: var(--accent-warm);">+30%</div>
-                  <div class="text-[10px] font-mono mt-0.5" style="color: var(--text-muted);">Integration Velocity</div>
-                </div>
-                <div class="p-3 rounded-lg border text-center"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
-                  <div class="text-xl font-mono font-bold" style="color: var(--text-title);">-20%</div>
-                  <div class="text-[10px] font-mono mt-0.5" style="color: var(--text-muted);">DB Read Contention</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- System 2 + Live Interactive pgvector Simulator -->
-            <div class="dev-card rounded-2xl p-6 sm:p-8 space-y-5">
-              <div class="flex flex-wrap items-center justify-between gap-2 text-xs font-mono"
-                style="color: var(--text-muted);">
-                <span class="px-2.5 py-0.5 rounded font-semibold border"
-                  style="background-color: var(--accent-tag); border-color: var(--accent-primary); color: var(--accent-tag-text);">
-                  FULLSTACK & AI INTEGRATION // SPRING BOOT & NEXT.JS
-                </span>
-                <span>Fullstack Engineering Project • 2025</span>
-              </div>
-
-              <h4 class="text-xl sm:text-2xl font-bold leading-snug" style="color: var(--text-title);">
-                Codebase RAG Chat: Real-Time Vector Similarity Retrieval & SSE Token Streaming for Codebases
-              </h4>
-
-              <p class="text-xs font-mono" style="color: var(--accent-primary);">
-                <strong>Tech Stack:</strong> Next.js, Spring Boot, PostgreSQL, pgvector, GitHub OAuth, SSE Streaming
-              </p>
-
-              <p class="text-sm sm:text-base leading-relaxed text-justify" style="color: var(--text-body);">
-                <strong>System Architecture:</strong> Codebase RAG Chat indexes multi-language repositories into
-                PostgreSQL with the pgvector extension using chunking and 1536-dimensional embeddings. Users sign in via
-                GitHub OAuth, index repos asynchronously, and submit prompts that trigger sub-2ms cosine similarity
-                nearest-neighbor retrieval. Answers stream character-by-character via Server-Sent Events (SSE) with
-                clickable line citations back to source files.
-              </p>
-
-              <!-- Live Interactive Architecture Simulator (Terminal Style) -->
-              <div class="rounded-xl border p-5 space-y-4"
-                style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
-                <div class="flex items-center justify-between text-xs font-mono">
-                  <span class="font-bold flex items-center gap-2" style="color: var(--text-title);">
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span>LIVE ARCHITECTURE SIMULATOR (Spring Boot + pgvector)</span>
-                  </span>
-                  <span class="text-[11px] text-emerald-400 font-bold font-mono">Status: Ready</span>
-                </div>
-
-                <div class="space-y-1.5">
-                  <div class="text-[11px] font-mono" style="color: var(--text-muted);">Select sample semantic query:
-                  </div>
-                  <div class="flex flex-wrap gap-2">
-                    <button onclick="runVectorQuery('kafka')"
-                      class="px-3 py-1.5 rounded border text-xs font-mono hover:border-sky-400 transition cursor-pointer"
-                      style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-title);">
-                      "How does Kafka consumer handle asynchronous offsets?"
-                    </button>
-                    <button onclick="runVectorQuery('redis')"
-                      class="px-3 py-1.5 rounded border text-xs font-mono hover:border-sky-400 transition cursor-pointer"
-                      style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-title);">
-                      "Explain Redis distributed L2 cache invalidation"
-                    </button>
-                    <button onclick="openProfileChat('Tell me about your overall profile and experience')"
-                      class="px-3 py-1.5 rounded border text-xs font-mono font-semibold hover:border-sky-400 transition flex items-center gap-1.5 cursor-pointer"
-                      style="background-color: var(--accent-tag); border-color: var(--accent-primary); color: var(--accent-tag-text);">
-                      <span>💬</span> "Ask Profile AI Bot"
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Terminal Output Window -->
-                <div id="vector-sim-terminal"
-                  class="p-4 rounded-lg bg-black/95 text-emerald-400 font-mono text-xs min-h-[120px] whitespace-pre-wrap leading-relaxed shadow-inner overflow-x-auto border border-white/10">
-// Click one of the queries above to simulate 1536-dim cosine similarity calculation, top-k retrieval, and SSE token streaming...
-                </div>
-              </div>
-
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ======================================================
-             SECTION: PROFESSIONAL SOFTWARE ENGINEERING EXPERIENCE
-             ====================================================== -->
-        <section id="experience" class="space-y-6">
-          <div class="border-b pb-3 flex items-center justify-between" style="border-color: var(--border-color);">
-            <div>
-              <h3 class="text-xs font-mono uppercase tracking-widest font-semibold" style="color: var(--accent-primary);">
-                // CAREER TRACK RECORD</h3>
-              <h2 class="text-2xl sm:text-3xl font-bold" style="color: var(--text-title);">Professional Software
-                Engineering Experience</h2>
-            </div>
-            <span class="text-xs font-mono text-muted hidden sm:inline" style="color: var(--text-muted);">
-              4+ Years at TCS
-            </span>
-          </div>
-
-          <div class="space-y-6">
-
-            <!-- Experience 1 -->
-            <div class="dev-card rounded-2xl p-6 sm:p-8 space-y-4 border-l-4"
-              style="border-left-color: var(--accent-primary);">
-              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                <div>
-                  <h4 class="text-xl font-bold" style="color: var(--text-title);">Java Developer (Fullstack & Systems)
-                  </h4>
-                  <p class="text-xs sm:text-sm font-mono mt-0.5" style="color: var(--accent-primary);">Tata Consultancy Services
-                    – Ghana Revenue Authority Project</p>
-                </div>
-                <span class="text-xs font-mono px-3 py-1 rounded border shrink-0"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-muted);">
-                  Mar 2025 – Present
-                </span>
-              </div>
-
-              <ul class="space-y-3 text-sm sm:text-base leading-relaxed list-disc list-outside pl-5"
-                style="color: var(--text-body);">
-                <li>
-                  <strong>Mission-Grade Microservices Delivery:</strong> Owned end-to-end delivery of tax form and
-                  accounting microservices with Java 11 and Spring Boot, integrating OpenAPI/Swagger, Feign Client, and
-                  Kong Gateway, <strong>reducing inter-service integration time by 30%</strong>.
-                </li>
-                <li>
-                  <strong>Distributed L2 Cache & Query Refactoring:</strong> Redesigned Hibernate/JPA entity models
-                  against PostgreSQL and deployed Redis distributed caching, <strong>cutting response times by 25% and
-                    alleviating database read pressure by 20%</strong>.
-                </li>
-                <li>
-                  <strong>High-Volume Asynchronous Streams:</strong> Engineered and deployed Kafka asynchronous
-                  streaming pipelines for tax data ingestion, <strong>expanding system throughput by 35%</strong>.
-                </li>
-                <li>
-                  <strong>Agile & Jira Backlog Grooming:</strong> Spearheaded requirement analysis with business
-                  stakeholders, <strong>improving sprint predictability by 15%</strong>.
-                </li>
-              </ul>
-            </div>
-
-            <!-- Experience 2 -->
-            <div class="dev-card rounded-2xl p-6 sm:p-8 space-y-4 border-l-4"
-              style="border-left-color: var(--accent-secondary);">
-              <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                <div>
-                  <h4 class="text-xl font-bold" style="color: var(--text-title);">Java Backend Developer</h4>
-                  <p class="text-xs sm:text-sm font-mono mt-0.5" style="color: var(--accent-secondary);">Tata Consultancy Services
-                    Global Enterprise Practice</p>
-                </div>
-                <span class="text-xs font-mono px-3 py-1 rounded border shrink-0"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-muted);">
-                  Jan 2022 – Mar 2025
-                </span>
-              </div>
-
-              <ul class="space-y-3 text-sm sm:text-base leading-relaxed list-disc list-outside pl-5"
-                style="color: var(--text-body);">
-                <li>
-                  <strong>Monolith Decomposition & IaC Pipelines:</strong> Decomposed monolithic business core into
-                  RESTful microservices, containerized them with Docker on Linux, provisioned environments via Terraform
-                  & Ansible, and automated Jenkins CI/CD, <strong>improving release cadence by 40%</strong>.
-                </li>
-                <li>
-                  <strong>Zero-Downtime Database Migration:</strong> Guided batch data migration from legacy DB2 to
-                  PostgreSQL using Spring Batch, <strong>achieving 100% data integrity with zero downtime</strong>.
-                </li>
-                <li>
-                  <strong>Production Incident RCA:</strong> Diagnosed critical incidents using ELK Stack (Elasticsearch,
-                  Logstash, Kibana), <strong>reducing mean resolution time by 25% and operational downtime by
-                    15%</strong>.
-                </li>
-                <li>
-                  <strong>Security Compliance & Multipart Stream:</strong> Deployed Azure Information Protection (AIP)
-                  for 100% internal reporting compliance, and built dynamic Spring MVC file upload/download modules
-                  <strong>cutting document turnaround time by 30%</strong>.
-                </li>
-              </ul>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ======================================================
-             SECTION: TECHNICAL LEADERSHIP & MENTORSHIP
-             ====================================================== -->
-        <section id="leadership" class="space-y-6">
-          <div class="border-b pb-3" style="border-color: var(--border-color);">
-            <h3 class="text-xs font-mono uppercase tracking-widest font-semibold" style="color: var(--accent-primary);">
-              // ENGINEERING LEADERSHIP</h3>
-            <h2 class="text-2xl sm:text-3xl font-bold" style="color: var(--text-title);">Technical Leadership &
-              Mentorship</h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            <div class="dev-card rounded-xl p-6 space-y-3">
-              <div class="text-xs font-mono uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-                DEVELOPER MENTORSHIP</div>
-              <h4 class="text-lg font-bold" style="color: var(--text-title);">Junior Engineer & Trainee Instruction</h4>
-              <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-body);">
-                Supervised and mentored <strong>4+ junior and trainee software developers</strong> at TCS on clean
-                object-oriented architecture, Git collaborative workflows, and production debugging on Linux servers.
-              </p>
-            </div>
-
-            <div class="dev-card rounded-xl p-6 space-y-3">
-              <div class="text-xs font-mono uppercase tracking-wider font-bold" style="color: var(--accent-primary);">
-                AI-ACCELERATED TOOLING</div>
-              <h4 class="text-lg font-bold" style="color: var(--text-title);">AI Testing & Architecture Scaffolding</h4>
-              <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-body);">
-                Championed the integration of <strong>Claude and Cursor AI tools</strong> for rapid microservice
-                scaffolding and automated unit/integration test generation, elevating test coverage by
-                <strong>20%</strong>.
-              </p>
-            </div>
-
-          </div>
-        </section>
-
-        <!-- ======================================================
-             SECTION: EDUCATION & CREDENTIALS
-             ====================================================== -->
-        <section id="education" class="space-y-6">
-          <div class="border-b pb-3" style="border-color: var(--border-color);">
-            <h3 class="text-xs font-mono uppercase tracking-widest font-semibold" style="color: var(--accent-primary);">
-              // ACADEMIC FOUNDATIONS</h3>
-            <h2 class="text-2xl sm:text-3xl font-bold" style="color: var(--text-title);">Education & Credentials</h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            <!-- Degree 1 -->
-            <div class="dev-card rounded-xl p-6 space-y-3 border-l-4"
-              style="border-left-color: var(--accent-primary);">
-              <div class="flex items-center justify-between text-xs font-mono" style="color: var(--text-muted);">
-                <span>BACHELOR OF ENGINEERING (B.E.)</span>
-                <span>Dec 2021</span>
-              </div>
-              <h4 class="text-lg font-bold" style="color: var(--text-title);">Government Engineering College, Dahod</h4>
-              <div class="flex items-center gap-3 pt-1">
-                <span class="px-2.5 py-1 rounded font-mono text-xs font-bold border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--accent-primary);">
-                  CGPA: 7.85 / 10
-                </span>
-                <span class="text-xs font-mono" style="color: var(--text-muted);">Computer & Systems Disciplines</span>
-              </div>
-            </div>
-
-            <!-- Degree 2 -->
-            <div class="dev-card rounded-xl p-6 space-y-3 border-l-4"
-              style="border-left-color: var(--accent-secondary);">
-              <div class="flex items-center justify-between text-xs font-mono" style="color: var(--text-muted);">
-                <span>DIPLOMA IN ENGINEERING</span>
-                <span>Dec 2018</span>
-              </div>
-              <h4 class="text-lg font-bold" style="color: var(--text-title);">Government Polytechnic, Navsari</h4>
-              <div class="flex items-center gap-3 pt-1">
-                <span class="px-2.5 py-1 rounded font-mono text-xs font-bold border"
-                  style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--accent-secondary);">
-                  CGPA: 8.99 / 10 (Distinction)
-                </span>
-                <span class="text-xs font-mono" style="color: var(--text-muted);">Computer Engineering</span>
-              </div>
-            </div>
-
-          </div>
-        </section>
 
       </div>
 
-    </div>
+      <!-- Continuous Scrolling Competencies Marquee (Dnyanesh Gore Style Ticker) -->
+      <div class="w-full overflow-hidden py-3 border-y rounded-xl"
+        style="background-color: var(--ticker-bg); border-color: var(--border-color);">
+        <div class="animate-marquee whitespace-nowrap text-xs font-mono font-semibold tracking-wider uppercase flex items-center gap-8"
+          style="color: var(--text-muted);">
+          <span>High-Throughput Microservices</span>
+          <span class="text-sky-400">✦</span>
+          <span>Apache Kafka Event Streaming</span>
+          <span class="text-emerald-400">✦</span>
+          <span>Redis L2 Distributed Caching</span>
+          <span class="text-amber-400">✦</span>
+          <span>Zero-Downtime DB Migration (DB2 → PostgreSQL)</span>
+          <span class="text-sky-400">✦</span>
+          <span>Spring Boot 3 & Spring Cloud</span>
+          <span class="text-emerald-400">✦</span>
+          <span>Docker Virtualization on Linux</span>
+          <span class="text-amber-400">✦</span>
+          <span>pgvector & Codebase RAG AI Architecture</span>
+          <span class="text-sky-400">✦</span>
+          <span>Kong API Gateway & Resilience4J</span>
+          <span class="text-emerald-400">✦</span>
+          <span>ELK Stack & Splunk Observability</span>
+          <span class="text-sky-400">✦</span>
+
+          <!-- Duplicated for continuous infinite marquee loop -->
+          <span>High-Throughput Microservices</span>
+          <span class="text-sky-400">✦</span>
+          <span>Apache Kafka Event Streaming</span>
+          <span class="text-emerald-400">✦</span>
+          <span>Redis L2 Distributed Caching</span>
+          <span class="text-amber-400">✦</span>
+          <span>Zero-Downtime DB Migration (DB2 → PostgreSQL)</span>
+          <span class="text-sky-400">✦</span>
+          <span>Spring Boot 3 & Spring Cloud</span>
+          <span class="text-emerald-400">✦</span>
+          <span>Docker Virtualization on Linux</span>
+          <span class="text-amber-400">✦</span>
+          <span>pgvector & Codebase RAG AI Architecture</span>
+          <span class="text-sky-400">✦</span>
+          <span>Kong API Gateway & Resilience4J</span>
+          <span class="text-emerald-400">✦</span>
+          <span>ELK Stack & Splunk Observability</span>
+          <span class="text-sky-400">✦</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: "BIG NUMBERS NEED BACKUP" (ENGINEERING IMPACT)
+         ======================================================== -->
+    <section id="metrics" class="space-y-8">
+      <div class="space-y-2 border-b pb-4" style="border-color: var(--border-color);">
+        <span class="text-xs font-mono tracking-widest uppercase font-bold text-sky-400">
+          // 01 · PRODUCTION METRICS
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight font-sans" style="color: var(--text-hero);">
+          Big claims need <span class="font-editorial italic font-normal text-sky-400">backup</span>.
+        </h2>
+        <p class="text-sm sm:text-base max-w-2xl" style="color: var(--text-muted);">
+          Selected outcomes from microservice decomposition, query optimization, high-volume Kafka streaming, and
+          zero-downtime database cutovers delivered at Tata Consultancy Services.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- Metric 1 -->
+        <div class="editorial-card rounded-2xl p-6 sm:p-8 space-y-3">
+          <div class="text-4xl sm:text-5xl font-mono font-bold text-sky-400">+35%</div>
+          <h3 class="text-base font-bold" style="color: var(--text-title);">Kafka Event Streaming Throughput</h3>
+          <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
+            Engineered asynchronous Kafka streaming topologies for tax submission ingestion under seasonal filing
+            surges, decoupling downstream accounting services.
+          </p>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="editorial-card rounded-2xl p-6 sm:p-8 space-y-3">
+          <div class="text-4xl sm:text-5xl font-mono font-bold text-emerald-400">-25%</div>
+          <h3 class="text-base font-bold" style="color: var(--text-title);">Query Response Latency</h3>
+          <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
+            Introduced Redis L2 multi-tier memory caching with dynamic TTL and LRU eviction, slashing read contention
+            against PostgreSQL by 20%.
+          </p>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="editorial-card rounded-2xl p-6 sm:p-8 space-y-3">
+          <div class="text-4xl sm:text-5xl font-mono font-bold text-amber-400">+40%</div>
+          <h3 class="text-base font-bold" style="color: var(--text-title);">CI/CD Deployment Velocity</h3>
+          <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
+            Containerized monolithic services with Docker on Linux, provisioned environments using Terraform &
+            Ansible, and automated Jenkins pipelines.
+          </p>
+        </div>
+
+        <!-- Metric 4 -->
+        <div class="editorial-card rounded-2xl p-6 sm:p-8 space-y-3">
+          <div class="text-4xl sm:text-5xl font-mono font-bold" style="color: var(--text-title);">100%</div>
+          <h3 class="text-base font-bold" style="color: var(--text-title);">Cutover Data Integrity</h3>
+          <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
+            Guided batch data migration from legacy IBM DB2 to PostgreSQL using Spring Batch with checksum verification
+            and zero operational downtime.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: SELECTED PRODUCTION PLATFORMS ("01 · SHIPPED PLATFORM")
+         ======================================================== -->
+    <section id="work" class="space-y-12">
+      <div class="space-y-2 border-b pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2"
+        style="border-color: var(--border-color);">
+        <div>
+          <span class="text-xs font-mono tracking-widest uppercase font-bold text-sky-400">
+            // 02 · FEATURED SYSTEMS
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight font-sans" style="color: var(--text-hero);">
+            Selected <span class="font-editorial italic font-normal text-sky-400">Work</span>
+          </h2>
+          <p class="text-sm sm:text-base max-w-xl" style="color: var(--text-muted);">
+            A focused set of production platforms, distributed microservices, and AI architecture stories.
+          </p>
+        </div>
+        <span class="text-xs font-mono text-muted" style="color: var(--text-muted);">2 Case Studies</span>
+      </div>
+
+      <div class="space-y-10">
+
+        <!-- Case Study 01: Ghana Revenue Authority Platform -->
+        <article class="editorial-card rounded-3xl p-8 sm:p-12 space-y-6 relative overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+            <span class="px-3 py-1 rounded-full border font-bold"
+              style="background-color: var(--accent-tag-bg); border-color: var(--accent-tag-border); color: var(--accent-primary);">
+              01 · SHIPPED PLATFORM · TATA CONSULTANCY SERVICES
+            </span>
+            <span style="color: var(--text-muted);">Ghana Revenue Authority · Mar 2025 – Present</span>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight font-sans"
+              style="color: var(--text-hero);">
+              Turning a monolithic taxation core into high-throughput asynchronous Kafka event streams.
+            </h3>
+            <p class="text-base sm:text-lg leading-relaxed text-justify" style="color: var(--text-body);">
+              National revenue administrations faced severe latency bottlenecks under seasonal tax filing deadlines.
+              Spearheaded the microservice decomposition and event-driven re-architecture using Java 11 and Spring Boot.
+              Formulated asynchronous Apache Kafka consumer topologies to isolate compute workflows, and abstracted
+              microservice intercommunication via Kong API Gateway and Feign Client.
+            </p>
+          </div>
+
+          <!-- Impact Pill Banner -->
+          <div class="p-4 rounded-xl border flex flex-wrap items-center justify-between gap-4"
+            style="background-color: var(--bg-surface-subtle); border-color: var(--border-color);">
+            <div class="flex items-center gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="text-xs sm:text-sm font-mono font-bold" style="color: var(--text-title);">
+                IMPACT: +35% Kafka Throughput · -25% Query Latency · +30% Integration Velocity
+              </span>
+            </div>
+            <span class="text-xs font-mono" style="color: var(--text-muted);">Based on production telemetry</span>
+          </div>
+
+          <!-- Tech Stack Tags -->
+          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Java
+              11</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Spring
+              Boot</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Apache
+              Kafka</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Redis
+              L2 Cache</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">PostgreSQL</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Kong
+              Gateway</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Feign
+              Client</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Resilience4J</span>
+          </div>
+        </article>
+
+        <!-- Case Study 02: Codebase RAG Chat (Interactive pgvector Simulator) -->
+        <article class="editorial-card rounded-3xl p-8 sm:p-12 space-y-6 relative overflow-hidden">
+          <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+            <span class="px-3 py-1 rounded-full border font-bold"
+              style="background-color: var(--accent-tag-bg); border-color: var(--accent-tag-border); color: var(--accent-primary);">
+              02 · FULLSTACK & AI ARCHITECTURE · CODEBASE RAG
+            </span>
+            <span style="color: var(--text-muted);">Spring Boot & Next.js · 2025</span>
+          </div>
+
+          <div class="space-y-3">
+            <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight font-sans"
+              style="color: var(--text-hero);">
+              Real-time vector similarity retrieval & SSE token streaming for multi-repo codebases.
+            </h3>
+            <p class="text-base sm:text-lg leading-relaxed text-justify" style="color: var(--text-body);">
+              Codebase RAG Chat indexes multi-language repositories into PostgreSQL with the pgvector extension using
+              chunking and 1536-dimensional embeddings. Users sign in via GitHub OAuth, index repos asynchronously, and
+              submit prompts that trigger sub-2ms cosine similarity nearest-neighbor retrieval. Answers stream
+              character-by-character via Server-Sent Events (SSE) with clickable line citations.
+            </p>
+          </div>
+
+          <!-- Live Interactive Simulator Terminal (Directly Embedded) -->
+          <div class="rounded-2xl border p-5 sm:p-6 space-y-4"
+            style="background-color: var(--bg-surface-subtle); border-color: var(--border-color);">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span class="font-bold flex items-center gap-2" style="color: var(--text-title);">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>LIVE ARCHITECTURE SIMULATOR (Spring Boot + pgvector)</span>
+              </span>
+              <span class="text-emerald-400 font-bold font-mono text-[11px]">Status: Ready</span>
+            </div>
+
+            <div class="space-y-2">
+              <div class="text-xs font-mono" style="color: var(--text-muted);">Select sample semantic query:</div>
+              <div class="flex flex-wrap gap-2">
+                <button onclick="runVectorQuery('kafka')"
+                  class="px-3.5 py-1.5 rounded-full border text-xs font-mono transition cursor-pointer hover:border-sky-400"
+                  style="background-color: var(--bg-surface); border-color: var(--border-color); color: var(--text-title);">
+                  "How does Kafka consumer handle asynchronous offsets?"
+                </button>
+                <button onclick="runVectorQuery('redis')"
+                  class="px-3.5 py-1.5 rounded-full border text-xs font-mono transition cursor-pointer hover:border-sky-400"
+                  style="background-color: var(--bg-surface); border-color: var(--border-color); color: var(--text-title);">
+                  "Explain Redis distributed L2 cache invalidation"
+                </button>
+                <button onclick="openProfileChat('Tell me about your overall profile and experience')"
+                  class="px-3.5 py-1.5 rounded-full border text-xs font-mono font-semibold transition flex items-center gap-1.5 cursor-pointer bg-sky-500/10 text-sky-400 border-sky-500/30 hover:border-sky-400">
+                  <span>💬</span> "Ask Profile AI Bot"
+                </button>
+              </div>
+            </div>
+
+            <!-- Terminal Output Window -->
+            <div id="vector-sim-terminal"
+              class="p-4 rounded-xl bg-black/90 text-emerald-400 font-mono text-xs min-h-[120px] whitespace-pre-wrap leading-relaxed shadow-inner overflow-x-auto border border-white/10">
+// Click one of the queries above to simulate 1536-dim cosine similarity calculation, top-k retrieval, and SSE token streaming...
+            </div>
+          </div>
+
+          <!-- Tech Stack Tags -->
+          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Next.js</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Spring
+              Boot</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">PostgreSQL
+              + pgvector</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">SSE
+              Token Streaming</span>
+            <span class="px-3 py-1 rounded-full border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">GitHub
+              OAuth</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: "THE WORK BEHIND THE CODE" (ARCHITECTURE & SYSTEMS)
+         ======================================================== -->
+    <section id="architecture" class="space-y-8">
+      <div class="space-y-2 border-b pb-4" style="border-color: var(--border-color);">
+        <span class="text-xs font-mono tracking-widest uppercase font-bold text-sky-400">
+          // 03 · SYSTEMS & GOVERNANCE
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight font-sans" style="color: var(--text-hero);">
+          The work behind the <span class="font-editorial italic font-normal text-sky-400">code</span>.
+        </h2>
+        <p class="text-sm sm:text-base max-w-2xl" style="color: var(--text-muted);">
+          Building architecture, reliability, repeatable pipelines, and the engineering culture needed to scale
+          enterprise platforms.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Area 1 -->
+        <div class="editorial-card rounded-2xl p-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-sky-400 uppercase">01 // EVENT STREAMING</span>
+            <span class="text-base">⚡</span>
+          </div>
+          <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
+            Distributed Event Streaming & Queues
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+            Partitioning topologies, asynchronous consumer group rebalancing, and non-blocking backpressure mechanisms
+            in Apache Kafka. Designed to isolate computational tax and accounting microservices under massive concurrent
+            bursts.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-2">
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Apache
+              Kafka</span>
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Kong
+              Gateway</span>
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Feign
+              Client</span>
+          </div>
+        </div>
+
+        <!-- Area 2 -->
+        <div class="editorial-card rounded-2xl p-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-emerald-400 uppercase">02 // CACHE & PERSISTENCE</span>
+            <span class="text-base">🚀</span>
+          </div>
+          <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
+            Distributed Caching & Relational Consistency
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+            Multi-tier memory caching, dynamic TTL eviction policies, and Hibernate/JPA object-relational mapping
+            performance over PostgreSQL. Alleviated database contention by 20% while speeding query returns by 25%.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-2">
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Redis
+              L2 Cache</span>
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">PostgreSQL</span>
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Hibernate/JPA</span>
+          </div>
+        </div>
+
+        <!-- Area 3 -->
+        <div class="editorial-card rounded-2xl p-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-amber-400 uppercase">03 // RELIABILITY & DEVOPS</span>
+            <span class="text-base">🛠️</span>
+          </div>
+          <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
+            Zero-Downtime Migration & CI/CD Cadence
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+            Decomposed monolithic business cores into Dockerized microservices, provisioned environments with Terraform
+            & Ansible, automated Jenkins CI/CD (+40% release cadence), and migrated DB2 to PostgreSQL with 100% data
+            integrity.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-2">
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Docker/Linux</span>
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Jenkins
+              CI/CD</span>
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">ELK
+              Stack</span>
+          </div>
+        </div>
+
+        <!-- Area 4 -->
+        <div class="editorial-card rounded-2xl p-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-sky-400 uppercase">04 // LEADERSHIP & MENTORSHIP</span>
+            <span class="text-base">🤝</span>
+          </div>
+          <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
+            Technical Leadership & AI Tooling
+          </h3>
+          <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+            Mentored 4+ junior and trainee software developers on clean architecture, Git collaborative workflows, and
+            Linux debugging. Championed team integration of Claude and Cursor AI tooling, improving test coverage by
+            20%.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-2">
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Developer
+              Mentorship</span>
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Claude
+              & Cursor AI</span>
+            <span class="px-2.5 py-0.5 rounded border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Clean
+              Architecture</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: CAREER EXPERIENCE (TRACK RECORD)
+         ======================================================== -->
+    <section id="experience" class="space-y-8">
+      <div class="space-y-2 border-b pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-2"
+        style="border-color: var(--border-color);">
+        <div>
+          <span class="text-xs font-mono tracking-widest uppercase font-bold text-sky-400">
+            // 04 · CAREER TIMELINE
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight font-sans" style="color: var(--text-hero);">
+            From craft to <span class="font-editorial italic font-normal text-sky-400">capability</span>.
+          </h2>
+        </div>
+        <span class="text-xs font-mono" style="color: var(--text-muted);">Tata Consultancy Services · 4+ Years</span>
+      </div>
+
+      <div class="space-y-6">
+
+        <!-- Role 1 -->
+        <div class="editorial-card rounded-2xl p-8 space-y-4 border-l-4 border-l-sky-400">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <div>
+              <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
+                Java Developer (Fullstack & Systems)
+              </h3>
+              <p class="text-sm font-mono text-sky-400 mt-0.5">
+                Tata Consultancy Services – Ghana Revenue Authority Project
+              </p>
+            </div>
+            <span class="text-xs font-mono px-3 py-1 rounded-full border shrink-0"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-muted);">
+              Mar 2025 – Present
+            </span>
+          </div>
+
+          <ul class="space-y-2.5 text-sm sm:text-base leading-relaxed list-disc list-outside pl-5"
+            style="color: var(--text-body);">
+            <li>
+              <strong>Mission-Grade Microservices:</strong> Owned end-to-end delivery of tax form and accounting
+              microservices using Java 11 and Spring Boot, integrating OpenAPI/Swagger, Feign Client, and Kong Gateway,
+              <strong>reducing cross-service integration time by 30%</strong>.
+            </li>
+            <li>
+              <strong>Distributed L2 Cache:</strong> Redesigned Hibernate/JPA entity relationships and deployed Redis
+              distributed caching, <strong>cutting response times by 25% and alleviating database read pressure by
+                20%</strong>.
+            </li>
+            <li>
+              <strong>High-Volume Asynchronous Streams:</strong> Engineered and operated Kafka streaming pipelines for
+              tax ingestion, <strong>expanding system throughput by 35%</strong> and decoupling downstream accounting
+              workflows.
+            </li>
+            <li>
+              <strong>Agile Leadership & Mentorship:</strong> Supervised 4+ junior developers, improving code coverage
+              by 20% via Claude and Cursor scaffolding, and raised sprint predictability by 15%.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Role 2 -->
+        <div class="editorial-card rounded-2xl p-8 space-y-4 border-l-4 border-l-emerald-400">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+            <div>
+              <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
+                Java Backend Developer
+              </h3>
+              <p class="text-sm font-mono text-emerald-400 mt-0.5">
+                Tata Consultancy Services Global Enterprise Practice
+              </p>
+            </div>
+            <span class="text-xs font-mono px-3 py-1 rounded-full border shrink-0"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-muted);">
+              Jan 2022 – Mar 2025
+            </span>
+          </div>
+
+          <ul class="space-y-2.5 text-sm sm:text-base leading-relaxed list-disc list-outside pl-5"
+            style="color: var(--text-body);">
+            <li>
+              <strong>Monolith Decomposition:</strong> Decomposed monolithic business core into RESTful microservices,
+              containerized with Docker on Linux, provisioned environments via Terraform & Ansible, and automated
+              Jenkins CI/CD, <strong>improving release cadence by 40%</strong>.
+            </li>
+            <li>
+              <strong>Zero-Downtime Database Migration:</strong> Guided batch migration from legacy IBM DB2 to
+              PostgreSQL using Spring Batch, <strong>achieving 100% data integrity with zero downtime</strong>.
+            </li>
+            <li>
+              <strong>Production RCA:</strong> Diagnosed critical production incidents using ELK Stack (Elasticsearch,
+              Logstash, Kibana), <strong>cutting mean resolution time by 25% and operational downtime by 15%</strong>.
+            </li>
+            <li>
+              <strong>Security Compliance:</strong> Deployed Azure Information Protection (AIP) for 100% internal
+              reporting compliance, and built dynamic Spring MVC file stream modules cutting turnaround time by 30%.
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: ACADEMIC FOUNDATIONS & CREDENTIALS
+         ======================================================== -->
+    <section id="about" class="space-y-8">
+      <div class="space-y-2 border-b pb-4" style="border-color: var(--border-color);">
+        <span class="text-xs font-mono tracking-widest uppercase font-bold text-sky-400">
+          // 05 · ACADEMIC FOUNDATIONS
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight font-sans" style="color: var(--text-hero);">
+          Education & <span class="font-editorial italic font-normal text-sky-400">Credentials</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="editorial-card rounded-2xl p-7 space-y-3">
+          <div class="flex items-center justify-between text-xs font-mono" style="color: var(--text-muted);">
+            <span>BACHELOR OF ENGINEERING (B.E.)</span>
+            <span>Dec 2021</span>
+          </div>
+          <h3 class="text-lg font-bold font-sans" style="color: var(--text-title);">
+            Government Engineering College, Dahod
+          </h3>
+          <div class="flex items-center gap-3 pt-1">
+            <span class="px-3 py-1 rounded-full font-mono text-xs font-bold border"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--accent-primary);">
+              CGPA: 7.85 / 10
+            </span>
+            <span class="text-xs font-mono" style="color: var(--text-muted);">Computer & Systems Disciplines</span>
+          </div>
+        </div>
+
+        <div class="editorial-card rounded-2xl p-7 space-y-3">
+          <div class="flex items-center justify-between text-xs font-mono" style="color: var(--text-muted);">
+            <span>DIPLOMA IN ENGINEERING</span>
+            <span>Dec 2018</span>
+          </div>
+          <h3 class="text-lg font-bold font-sans" style="color: var(--text-title);">
+            Government Polytechnic, Navsari
+          </h3>
+          <div class="flex items-center gap-3 pt-1">
+            <span class="px-3 py-1 rounded-full font-mono text-xs font-bold border text-emerald-400"
+              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color);">
+              CGPA: 8.99 / 10 (Distinction)
+            </span>
+            <span class="text-xs font-mono" style="color: var(--text-muted);">Computer Engineering</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         SECTION: "LET'S CONNECT" (DNYANESH GORE STYLE FOOTER)
+         ======================================================== -->
+    <section id="contact" class="space-y-10 pt-10 border-t" style="border-color: var(--border-color);">
+      <div class="max-w-4xl space-y-4">
+        <span class="text-xs font-mono tracking-widest uppercase font-bold text-sky-400">
+          // 06 · LET'S CONNECT
+        </span>
+        <h2 class="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight font-sans"
+          style="color: var(--text-hero);">
+          Complex systems? High-concurrency challenge? <span
+            class="font-editorial italic font-normal text-sky-400">Let's make it simpler.</span>
+        </h2>
+        <p class="text-base sm:text-lg" style="color: var(--text-body);">
+          Thanks for scrolling this far. Think this was interesting? Wait until you hear the systems architecture
+          behind it.
+        </p>
+      </div>
+
+      <!-- Contact Action Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+        <!-- Email Card -->
+        <a href="mailto:ptwaakash@gmail.com"
+          class="editorial-card rounded-2xl p-6 space-y-2 block hover:border-sky-400 transition group">
+          <div class="text-xs font-mono text-muted uppercase" style="color: var(--text-muted);">EMAIL</div>
+          <div class="text-sm font-bold font-mono truncate group-hover:text-sky-400" style="color: var(--text-hero);">
+            ptwaakash@gmail.com
+          </div>
+          <div class="text-xs text-muted" style="color: var(--text-muted);">Click to write ↗</div>
+        </a>
+
+        <!-- Phone Card -->
+        <a href="tel:+918530603015"
+          class="editorial-card rounded-2xl p-6 space-y-2 block hover:border-sky-400 transition group">
+          <div class="text-xs font-mono text-muted uppercase" style="color: var(--text-muted);">CALL ME</div>
+          <div class="text-sm font-bold font-mono group-hover:text-sky-400" style="color: var(--text-hero);">
+            +91 8530603015
+          </div>
+          <div class="text-xs text-muted" style="color: var(--text-muted);">Pune, India ↗</div>
+        </a>
+
+        <!-- LinkedIn Card -->
+        <a href="https://www.linkedin.com/in/aakash-kumar-58533b145/" target="_blank"
+          class="editorial-card rounded-2xl p-6 space-y-2 block hover:border-sky-400 transition group">
+          <div class="text-xs font-mono text-muted uppercase" style="color: var(--text-muted);">LINKEDIN</div>
+          <div class="text-sm font-bold font-mono group-hover:text-sky-400 truncate" style="color: var(--text-hero);">
+            aakash-kumar-58533b145
+          </div>
+          <div class="text-xs text-muted" style="color: var(--text-muted);">Professional Profile ↗</div>
+        </a>
+
+        <!-- GitHub Card -->
+        <a href="https://github.com/Aakashptw" target="_blank"
+          class="editorial-card rounded-2xl p-6 space-y-2 block hover:border-sky-400 transition group">
+          <div class="text-xs font-mono text-muted uppercase" style="color: var(--text-muted);">GITHUB</div>
+          <div class="text-sm font-bold font-mono group-hover:text-sky-400" style="color: var(--text-hero);">
+            github.com/Aakashptw
+          </div>
+          <div class="text-xs text-muted" style="color: var(--text-muted);">Code Repositories ↗</div>
+        </a>
+
+      </div>
+
+      <!-- Quick Actions Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pt-6 border-t"
+        style="border-color: var(--border-color);">
+        <div class="flex items-center gap-3">
+          <button onclick="copyTechSummary()"
+            class="px-4 py-2 rounded-full text-xs font-mono font-semibold border transition hover:border-sky-400 cursor-pointer"
+            style="background-color: var(--bg-surface); border-color: var(--border-color); color: var(--text-title);">
+            <span>📋</span> Copy Tech Profile Summary
+          </button>
+          <button onclick="openResumeModal()"
+            class="px-4 py-2 rounded-full text-xs font-mono font-semibold border transition hover:border-sky-400 cursor-pointer"
+            style="background-color: var(--bg-surface); border-color: var(--border-color); color: var(--text-title);">
+            <span>👁️</span> View Resume PDF
+          </button>
+        </div>
+
+        <button onclick="window.print()"
+          class="px-5 py-2.5 rounded-full text-xs font-mono font-bold text-white transition shadow-sm hover:opacity-90 cursor-pointer bg-sky-500">
+          <span>📥</span> Download ATS Resume
+        </button>
+      </div>
+    </section>
+
   </main>
 
   <!-- ==========================================================
@@ -1099,8 +1120,7 @@
 
     <!-- RESUME HEADER -->
     <div style="text-align: center; margin-bottom: 4pt; padding-bottom: 3pt; border-bottom: 1px solid #000000;">
-      <h1
-        style="font-size: 20pt; font-weight: 700; margin: 0 0 2pt 0; color: #000000; letter-spacing: -0.01em;">
+      <h1 style="font-size: 20pt; font-weight: 700; margin: 0 0 2pt 0; color: #000000; letter-spacing: -0.01em;">
         Aakash Patwa
       </h1>
       <div
@@ -1282,40 +1302,44 @@
 
   </div>
 
-  <!-- LIGHTBOX MODAL FOR EXPANDED PORTRAIT PHOTO -->
+  <!-- ==========================================================
+       PHOTO LIGHTBOX MODAL
+       ========================================================== -->
   <div id="photo-modal"
-    class="no-print fixed inset-0 z-50 bg-black/90 backdrop-blur-lg hidden flex items-center justify-center p-4"
+    class="no-print fixed inset-0 z-50 bg-black/90 backdrop-blur-xl hidden flex items-center justify-center p-4"
     onclick="closePhotoModal()">
-    <div class="relative max-w-lg max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl border border-sky-500/40"
-      onclick="event.stopPropagation()">
+    <div class="relative max-w-lg max-h-[90vh] rounded-2xl overflow-hidden shadow-2xl border"
+      style="border-color: var(--border-accent);" onclick="event.stopPropagation()">
       <button onclick="closePhotoModal()"
         class="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-black/70 text-white flex items-center justify-center text-sm font-bold hover:bg-black transition cursor-pointer">✕</button>
       <img src="profile_original.png" alt="Aakash Patwa - Senior Java Backend Developer"
         class="w-full h-auto max-h-[80vh] object-cover" />
-      <div class="p-4 bg-slate-900 text-white text-center font-mono">
+      <div class="p-4 bg-black/90 text-white text-center font-mono">
         <p class="text-base font-bold text-sky-400">Aakash Patwa</p>
-        <p class="text-xs text-slate-400">Senior Java Backend Developer • 4+ Yrs Experience • Pune, India</p>
+        <p class="text-xs text-stone-400">Senior Java Backend Developer • 4+ Yrs Experience • Pune, India</p>
       </div>
     </div>
   </div>
 
-  <!-- DEDICATED MODAL FOR VIEWING RESUME PDF -->
+  <!-- ==========================================================
+       RESUME VIEWER MODAL
+       ========================================================== -->
   <div id="resume-modal"
     class="no-print fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-2 sm:p-4 md:p-6"
     onclick="closeResumeModal()">
     <div class="relative w-full max-w-5xl h-[92vh] flex flex-col rounded-2xl overflow-hidden shadow-2xl border"
-      style="background-color: var(--bg-card); border-color: var(--border-color);" onclick="event.stopPropagation()">
+      style="background-color: var(--bg-surface); border-color: var(--border-color);"
+      onclick="event.stopPropagation()">
 
       <!-- Resume Modal Top Bar -->
       <div class="flex items-center justify-between px-4 sm:px-6 py-3 border-b shrink-0"
-        style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
+        style="background-color: var(--bg-surface-subtle); border-color: var(--border-color);">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded-lg flex items-center justify-center font-bold font-mono text-xs"
-            style="background-color: var(--accent-primary); color: white;">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center font-bold font-mono text-xs bg-sky-500 text-white">
             PDF
           </div>
           <div>
-            <h3 class="font-bold text-sm sm:text-base leading-tight" style="color: var(--text-title);">
+            <h3 class="font-bold text-sm sm:text-base leading-tight" style="color: var(--text-hero);">
               Aakash Patwa &mdash; Resume
             </h3>
             <span class="text-[11px] font-mono" style="color: var(--text-muted);">
@@ -1325,23 +1349,17 @@
         </div>
 
         <div class="flex items-center gap-2">
-          <!-- Open in Tab Button -->
           <a href="resume.pdf" target="_blank"
             class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium border transition hover:border-sky-400"
-            style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-title);">
+            style="background-color: var(--bg-surface); border-color: var(--border-color); color: var(--text-title);">
             <span>↗</span>
             <span>Open in Tab</span>
           </a>
-
-          <!-- Download Button -->
           <button onclick="window.print()"
-            class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-lg text-xs font-mono font-semibold text-white transition shadow-sm hover:opacity-90 cursor-pointer"
-            style="background-color: var(--accent-primary);">
+            class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-lg text-xs font-mono font-semibold text-white transition shadow-sm hover:opacity-90 cursor-pointer bg-sky-500">
             <span>📥</span>
             <span>Download PDF</span>
           </button>
-
-          <!-- Close Modal Button -->
           <button onclick="closeResumeModal()"
             class="w-8 h-8 rounded-lg flex items-center justify-center border font-bold text-sm hover:bg-white/5 transition cursor-pointer"
             style="border-color: var(--border-color); color: var(--text-muted);">
@@ -1357,12 +1375,62 @@
           <p class="p-8 text-center font-mono text-sm" style="color: var(--text-muted);">
             Your browser doesn't support embedded PDFs.
             <a href="resume.pdf" target="_blank" download="Aakash_Patwa_Resume.pdf"
-              class="underline text-sky-400 font-bold">Download
-              the PDF here</a>.
+              class="underline text-sky-400 font-bold">Download the PDF here</a>.
           </p>
         </iframe>
       </div>
 
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       BACKGROUND MUSIC PLAYER ("All The Stars" - Kendrick Lamar & SZA)
+       ========================================================== -->
+  <audio id="portfolio-audio" loop preload="auto">
+    <source src="all-the-stars.mp3" type="audio/mpeg">
+    <source
+      src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/8b/2c/ea8b2cf4-95f2-b0b3-ffc5-10f4611bf98f/mzaf_6758805407695014001.plus.aac.p.m4a"
+      type="audio/mp4">
+  </audio>
+
+  <!-- Welcome Music Prompt Toast (Bottom-Left) -->
+  <div id="music-welcome-toast"
+    class="no-print fixed bottom-5 left-5 sm:bottom-6 sm:left-6 z-50 max-w-[340px] rounded-2xl p-4 border shadow-2xl backdrop-blur-xl transition-all duration-500 transform translate-y-0 opacity-100 flex flex-col gap-3 font-sans"
+    style="background-color: var(--bg-surface); border-color: var(--border-color); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7);">
+
+    <div class="flex items-start justify-between gap-2.5">
+      <div class="flex items-center gap-2.5">
+        <div
+          class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white text-base shadow-md shrink-0">
+          🎵
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <h4 class="text-xs font-bold" style="color: var(--text-hero);">Play Background Music?</h4>
+            <span
+              class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">OST</span>
+          </div>
+          <p class="text-[11px] font-mono leading-tight mt-0.5" style="color: var(--text-muted);">
+            All The Stars &bull; Kendrick Lamar & SZA
+          </p>
+        </div>
+      </div>
+      <button onclick="dismissMusicToast()" class="text-xs text-muted hover:text-white p-1 cursor-pointer shrink-0"
+        title="Dismiss">✕</button>
+    </div>
+
+    <div class="flex items-center justify-between gap-2 pt-1 border-t" style="border-color: var(--border-color);">
+      <button id="toast-play-btn" onclick="togglePortfolioMusic()"
+        class="flex-1 py-1.5 px-3 rounded-lg text-xs font-mono font-bold text-white transition flex items-center justify-center gap-1.5 shadow-sm hover:opacity-90 cursor-pointer bg-sky-500">
+        <span id="toast-play-icon">▶</span>
+        <span id="toast-play-text">Play Track</span>
+      </button>
+      <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg border text-[11px] font-mono"
+        style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-muted);">
+        <span>🔊</span>
+        <input id="music-volume" type="range" min="0" max="1" step="0.05" value="0.35"
+          oninput="setMusicVolume(this.value)" class="w-14 accent-sky-400 cursor-pointer h-1 rounded" title="Volume">
+      </div>
     </div>
   </div>
 
@@ -1374,11 +1442,11 @@
     <!-- Chat Window -->
     <div id="profile-chat-window"
       class="hidden w-[92vw] sm:w-[420px] h-[550px] max-h-[84vh] rounded-2xl shadow-2xl border flex flex-col overflow-hidden transition-all duration-300"
-      style="background-color: var(--bg-card-solid); border-color: var(--border-color); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6);">
+      style="background-color: var(--bg-surface); border-color: var(--border-color); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7);">
 
-      <!-- Chat Header (IDE Titlebar Style) -->
+      <!-- Chat Header -->
       <div class="px-4 py-3 border-b flex items-center justify-between shrink-0"
-        style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
+        style="background-color: var(--bg-surface-subtle); border-color: var(--border-color);">
         <div class="flex items-center gap-2.5">
           <div
             class="w-8 h-8 rounded-lg flex items-center justify-center font-mono font-bold text-xs text-white shadow-sm bg-gradient-to-br from-sky-500 to-indigo-600">
@@ -1386,7 +1454,7 @@
           </div>
           <div>
             <div class="flex items-center gap-1.5">
-              <h3 class="font-bold text-xs sm:text-sm leading-tight" style="color: var(--text-title);">
+              <h3 class="font-bold text-xs sm:text-sm leading-tight" style="color: var(--text-hero);">
                 Aakash AI Assistant
               </h3>
               <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Online & Ready"></span>
@@ -1416,54 +1484,52 @@
         class="px-3 py-2 border-b flex items-center gap-1.5 overflow-x-auto whitespace-nowrap text-[11px] font-mono no-scrollbar"
         style="background-color: var(--bg-page); border-color: var(--border-color);">
         <button onclick="sendQuickPrompt('What is your tech stack?')"
-          class="px-2.5 py-1 rounded border hover:border-sky-400 transition shrink-0 cursor-pointer"
-          style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-body);">
+          class="px-2.5 py-1 rounded-full border hover:border-sky-400 transition shrink-0 cursor-pointer"
+          style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-body);">
           🛠️ Tech Stack
         </button>
         <button onclick="sendQuickPrompt('Tell me about your Kafka experience at TCS')"
-          class="px-2.5 py-1 rounded border hover:border-sky-400 transition shrink-0 cursor-pointer"
-          style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-body);">
+          class="px-2.5 py-1 rounded-full border hover:border-sky-400 transition shrink-0 cursor-pointer"
+          style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-body);">
           ⚡ Kafka Streaming
         </button>
         <button onclick="sendQuickPrompt('Explain your Redis caching work')"
-          class="px-2.5 py-1 rounded border hover:border-sky-400 transition shrink-0 cursor-pointer"
-          style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-body);">
+          class="px-2.5 py-1 rounded-full border hover:border-sky-400 transition shrink-0 cursor-pointer"
+          style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-body);">
           🚀 Redis Caching
         </button>
         <button onclick="sendQuickPrompt('Tell me about your TCS roles and experience')"
-          class="px-2.5 py-1 rounded border hover:border-sky-400 transition shrink-0 cursor-pointer"
-          style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-body);">
+          class="px-2.5 py-1 rounded-full border hover:border-sky-400 transition shrink-0 cursor-pointer"
+          style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-body);">
           🏢 TCS Experience
         </button>
         <button onclick="sendQuickPrompt('What projects have you built?')"
-          class="px-2.5 py-1 rounded border hover:border-sky-400 transition shrink-0 cursor-pointer"
-          style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-body);">
+          class="px-2.5 py-1 rounded-full border hover:border-sky-400 transition shrink-0 cursor-pointer"
+          style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-body);">
           💻 Projects (RAG)
         </button>
         <button onclick="sendQuickPrompt('How can I contact or hire Aakash?')"
-          class="px-2.5 py-1 rounded border hover:border-sky-400 transition shrink-0 cursor-pointer"
-          style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-body);">
+          class="px-2.5 py-1 rounded-full border hover:border-sky-400 transition shrink-0 cursor-pointer"
+          style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-body);">
           📞 Contact & Hire
         </button>
       </div>
 
       <!-- Chat Messages Scroll Container -->
       <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 text-xs sm:text-[13px] leading-relaxed">
-        <!-- Initial Bot Greeting -->
         <div class="flex items-start gap-2.5">
           <div
-            class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-mono font-bold text-white shrink-0 mt-0.5"
-            style="background-color: var(--accent-primary);">
+            class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-mono font-bold text-white shrink-0 mt-0.5 bg-sky-500">
             AI
           </div>
           <div class="p-3 rounded-xl rounded-tl-sm border max-w-[85%] space-y-1.5 shadow-sm"
-            style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-body);">
+            style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-body);">
             <p>
               👋 <strong>Hi! I'm Aakash Patwa's AI Assistant.</strong>
             </p>
             <p>
               Ask me about his <strong>4+ years of Java backend experience</strong>, high-concurrency microservices,
-              Kafka event streaming pipelines, Redis L2 caching, TCS Ghana Revenue Authority project, or contact info.
+              Kafka event streaming pipelines, Redis L2 caching, TCS Ghana Revenue Authority platform, or contact info.
             </p>
             <p class="text-[11px] font-mono pt-1" style="color: var(--text-muted);">
               💡 Click any suggestion chip above or type your prompt below!
@@ -1474,14 +1540,13 @@
 
       <!-- Chat Input Bar -->
       <form id="chat-form" onsubmit="handleChatSubmit(event)" class="p-2.5 border-t shrink-0 flex items-center gap-2"
-        style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
+        style="background-color: var(--bg-surface-subtle); border-color: var(--border-color);">
         <input id="chat-input" type="text" autocomplete="off"
           placeholder="Ask about Aakash's stack, Kafka, TCS, contact..."
           class="flex-1 text-xs sm:text-[13px] px-3.5 py-2.5 rounded-xl border focus:outline-none focus:ring-1 transition font-sans"
-          style="background-color: var(--bg-card); border-color: var(--border-color); color: var(--text-title);" />
+          style="background-color: var(--bg-surface); border-color: var(--border-color); color: var(--text-hero);" />
         <button type="submit" id="chat-send-btn"
-          class="w-9 h-9 rounded-xl flex items-center justify-center text-white transition shadow-sm hover:opacity-90 shrink-0 cursor-pointer font-bold"
-          style="background-color: var(--accent-primary);">
+          class="w-9 h-9 rounded-xl flex items-center justify-center text-white transition shadow-sm hover:opacity-90 shrink-0 cursor-pointer font-bold bg-sky-500">
           <span>➤</span>
         </button>
       </form>
@@ -1490,8 +1555,7 @@
 
     <!-- Floating Launcher Trigger Button -->
     <button id="chat-launcher-btn" onclick="toggleProfileChat()"
-      class="flex items-center gap-2.5 px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 text-white font-mono text-xs font-semibold cursor-pointer border"
-      style="background-color: var(--accent-primary); border-color: rgba(255,255,255,0.2);">
+      class="flex items-center gap-2.5 px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 text-white font-mono text-xs font-semibold cursor-pointer border bg-sky-500 border-white/20">
       <span class="relative flex h-2.5 w-2.5">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
@@ -1501,166 +1565,21 @@
 
   </div>
 
-  <!-- ==========================================================
-       BACKGROUND MUSIC PLAYER ("All The Stars" - Kendrick Lamar & SZA)
-       ========================================================== -->
-  <!-- Hidden Background Music Audio Player -->
-  <audio id="portfolio-audio" loop preload="auto">
-    <source src="all-the-stars.mp3" type="audio/mpeg">
-    <source src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/8b/2c/ea8b2cf4-95f2-b0b3-ffc5-10f4611bf98f/mzaf_6758805407695014001.plus.aac.p.m4a" type="audio/mp4">
-  </audio>
-
-  <!-- Welcome Music Prompt Toast -->
-  <div id="music-welcome-toast"
-    class="no-print fixed bottom-5 left-5 sm:bottom-6 sm:left-6 z-50 max-w-[340px] rounded-2xl p-4 border shadow-2xl backdrop-blur-xl transition-all duration-500 transform translate-y-0 opacity-100 flex flex-col gap-3 font-sans"
-    style="background-color: var(--bg-card-solid); border-color: var(--border-color); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.6);">
-    
-    <div class="flex items-start justify-between gap-2.5">
-      <div class="flex items-center gap-2.5">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white text-base shadow-md shrink-0">
-          🎵
-        </div>
-        <div>
-          <div class="flex items-center gap-1.5">
-            <h4 class="text-xs font-bold" style="color: var(--text-title);">Play Background Music?</h4>
-            <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">OST</span>
-          </div>
-          <p class="text-[11px] font-mono leading-tight mt-0.5" style="color: var(--text-muted);">
-            All The Stars &bull; Kendrick Lamar & SZA
-          </p>
-        </div>
-      </div>
-      <button onclick="dismissMusicToast()" class="text-xs text-muted hover:text-white p-1 cursor-pointer shrink-0" title="Dismiss">✕</button>
-    </div>
-
-    <!-- Actions & Volume Slider -->
-    <div class="flex items-center justify-between gap-2 pt-1 border-t" style="border-color: var(--border-color);">
-      <button id="toast-play-btn" onclick="togglePortfolioMusic()"
-        class="flex-1 py-1.5 px-3 rounded-lg text-xs font-mono font-bold text-white transition flex items-center justify-center gap-1.5 shadow-sm hover:opacity-90 cursor-pointer"
-        style="background-color: var(--accent-primary);">
-        <span id="toast-play-icon">▶</span>
-        <span id="toast-play-text">Play Track</span>
-      </button>
-      <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg border text-[11px] font-mono"
-        style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-muted);">
-        <span>🔊</span>
-        <input id="music-volume" type="range" min="0" max="1" step="0.05" value="0.35" oninput="setMusicVolume(this.value)"
-          class="w-14 accent-sky-400 cursor-pointer h-1 rounded" title="Volume">
-      </div>
-    </div>
-  </div>
-
-  <!-- FOOTER (DEVELOPER CONSOLE FOOTER) -->
-  <footer class="no-print border-t py-10 text-center text-xs font-mono mt-16"
+  <!-- FOOTER -->
+  <footer class="no-print border-t py-12 text-center text-xs font-mono mt-20"
     style="border-color: var(--border-color); color: var(--text-muted);">
-    <div class="max-w-[1700px] mx-auto px-4 sm:px-8 space-y-2">
-      <p class="text-sm font-semibold" style="color: var(--text-title);">
+    <div class="max-w-[1500px] mx-auto px-4 sm:px-8 space-y-2">
+      <p class="text-sm font-semibold" style="color: var(--text-hero);">
         Aakash Patwa &mdash; Senior Java Backend & Distributed Systems Portfolio
       </p>
-      <p>© 2026. Built with Clean HTML, CSS & Vanilla JS. Styled for High-Concurrency Performance.</p>
+      <p>© 2026. Inspired by Dnyanesh Gore's Editorial Craft. Built for High-Concurrency Performance.</p>
     </div>
   </footer>
 
   <!-- ==========================================================
-       SCRIPTS: THEMES, MODAL, TECH SUMMARY & SIMULATOR
+       SCRIPTS: THEMES, MODALS, MUSIC, SIMULATOR & AI CHAT
        ========================================================== -->
   <script>
-    // ==========================================================
-    // BACKGROUND MUSIC CONTROLLER ("All The Stars")
-    // ==========================================================
-    const audio = document.getElementById('portfolio-audio');
-    const headerIcon = document.getElementById('music-header-icon');
-    const headerLabel = document.getElementById('music-header-label');
-    const headerBars = document.getElementById('music-header-bars');
-    const toastPlayIcon = document.getElementById('toast-play-icon');
-    const toastPlayText = document.getElementById('toast-play-text');
-    const musicToast = document.getElementById('music-welcome-toast');
-    let isMusicPlaying = false;
-
-    if (audio) {
-      audio.volume = 0.35;
-    }
-
-    function togglePortfolioMusic() {
-      if (!audio) return;
-      if (isMusicPlaying) {
-        audio.pause();
-        isMusicPlaying = false;
-        updateMusicUI(false);
-      } else {
-        audio.play().then(() => {
-          isMusicPlaying = true;
-          updateMusicUI(true);
-        }).catch(err => {
-          console.log("Audio playback blocked or waiting for user interaction:", err);
-        });
-      }
-    }
-
-    function updateMusicUI(playing) {
-      const profileAction = document.getElementById('music-profile-action');
-      const profileBars = document.getElementById('music-profile-bars');
-
-      if (playing) {
-        if (headerIcon) headerIcon.textContent = '⏸';
-        if (headerLabel) headerLabel.textContent = 'Pause Music';
-        if (headerBars) {
-          headerBars.classList.remove('hidden');
-          headerBars.classList.add('flex');
-        }
-        if (toastPlayIcon) toastPlayIcon.textContent = '⏸';
-        if (toastPlayText) toastPlayText.textContent = 'Pause Track';
-        if (profileAction) {
-          profileAction.textContent = '⏸ Pause';
-          profileAction.style.backgroundColor = 'var(--accent-secondary)';
-        }
-        if (profileBars) {
-          profileBars.classList.remove('hidden');
-          profileBars.classList.add('flex');
-        }
-      } else {
-        if (headerIcon) headerIcon.textContent = '▶';
-        if (headerLabel) headerLabel.textContent = 'Play Music';
-        if (headerBars) {
-          headerBars.classList.add('hidden');
-          headerBars.classList.remove('flex');
-        }
-        if (toastPlayIcon) toastPlayIcon.textContent = '▶';
-        if (toastPlayText) toastPlayText.textContent = 'Play Track';
-        if (profileAction) {
-          profileAction.textContent = '▶ Play';
-          profileAction.style.backgroundColor = 'var(--accent-primary)';
-        }
-        if (profileBars) {
-          profileBars.classList.add('hidden');
-          profileBars.classList.remove('flex');
-        }
-      }
-    }
-
-    function setMusicVolume(val) {
-      if (audio) {
-        audio.volume = parseFloat(val);
-      }
-    }
-
-    function dismissMusicToast() {
-      if (musicToast) {
-        musicToast.style.opacity = '0';
-        musicToast.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-          musicToast.classList.add('hidden');
-        }, 500);
-      }
-      sessionStorage.setItem('music_toast_dismissed', 'true');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      if (sessionStorage.getItem('music_toast_dismissed') === 'true') {
-        if (musicToast) musicToast.classList.add('hidden');
-      }
-    });
-
     // Theme Switcher
     const themeSelector = document.getElementById('theme-selector');
     themeSelector.addEventListener('change', (e) => {
@@ -1707,10 +1626,6 @@ LinkedIn: https://www.linkedin.com/in/aakash-kumar-58533b145/ | GitHub: https://
       });
     }
 
-    function copyCitation() {
-      copyTechSummary();
-    }
-
     // Live pgvector Architecture Simulator
     function runVectorQuery(type) {
       const terminal = document.getElementById('vector-sim-terminal');
@@ -1732,6 +1647,83 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
         }
       }, 400);
     }
+
+    // ==========================================================
+    // BACKGROUND MUSIC CONTROLLER ("All The Stars")
+    // ==========================================================
+    const audio = document.getElementById('portfolio-audio');
+    const headerIcon = document.getElementById('music-header-icon');
+    const headerLabel = document.getElementById('music-header-label');
+    const headerBars = document.getElementById('music-header-bars');
+    const toastPlayIcon = document.getElementById('toast-play-icon');
+    const toastPlayText = document.getElementById('toast-play-text');
+    const musicToast = document.getElementById('music-welcome-toast');
+    let isMusicPlaying = false;
+
+    if (audio) {
+      audio.volume = 0.35;
+    }
+
+    function togglePortfolioMusic() {
+      if (!audio) return;
+      if (isMusicPlaying) {
+        audio.pause();
+        isMusicPlaying = false;
+        updateMusicUI(false);
+      } else {
+        audio.play().then(() => {
+          isMusicPlaying = true;
+          updateMusicUI(true);
+        }).catch(err => {
+          console.log("Audio playback blocked or waiting for user gesture:", err);
+        });
+      }
+    }
+
+    function updateMusicUI(playing) {
+      if (playing) {
+        if (headerIcon) headerIcon.textContent = '⏸';
+        if (headerLabel) headerLabel.textContent = 'All The Stars';
+        if (headerBars) {
+          headerBars.classList.remove('hidden');
+          headerBars.classList.add('flex');
+        }
+        if (toastPlayIcon) toastPlayIcon.textContent = '⏸';
+        if (toastPlayText) toastPlayText.textContent = 'Pause Track';
+      } else {
+        if (headerIcon) headerIcon.textContent = '▶';
+        if (headerLabel) headerLabel.textContent = 'All The Stars';
+        if (headerBars) {
+          headerBars.classList.add('hidden');
+          headerBars.classList.remove('flex');
+        }
+        if (toastPlayIcon) toastPlayIcon.textContent = '▶';
+        if (toastPlayText) toastPlayText.textContent = 'Play Track';
+      }
+    }
+
+    function setMusicVolume(val) {
+      if (audio) {
+        audio.volume = parseFloat(val);
+      }
+    }
+
+    function dismissMusicToast() {
+      if (musicToast) {
+        musicToast.style.opacity = '0';
+        musicToast.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+          musicToast.classList.add('hidden');
+        }, 500);
+      }
+      sessionStorage.setItem('music_toast_dismissed', 'true');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (sessionStorage.getItem('music_toast_dismissed') === 'true') {
+        if (musicToast) musicToast.classList.add('hidden');
+      }
+    });
 
     // ==========================================================
     // AI PROFILE CHATBOT ENGINE
@@ -1769,12 +1761,11 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
     function resetProfileChat() {
       chatMessages.innerHTML = `
         <div class="flex items-start gap-2.5">
-          <div class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-mono font-bold text-white shrink-0 mt-0.5"
-            style="background-color: var(--accent-primary);">
+          <div class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-mono font-bold text-white shrink-0 mt-0.5 bg-sky-500">
             AI
           </div>
           <div class="p-3 rounded-xl rounded-tl-sm border max-w-[85%] space-y-1.5 shadow-sm"
-            style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-body);">
+            style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-body);">
             <p>👋 <strong>Chat history reset.</strong></p>
             <p>Ask me any question about Aakash's <strong>4+ years of Java backend development</strong>, TCS experience, Kafka pipelines, Redis caching, or contact info.</p>
           </div>
@@ -1802,8 +1793,7 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
       const msgDiv = document.createElement('div');
       msgDiv.className = 'flex items-start justify-end gap-2';
       msgDiv.innerHTML = `
-        <div class="p-3 rounded-xl rounded-tr-sm text-white max-w-[85%] shadow-sm leading-relaxed"
-          style="background-color: var(--accent-primary);">
+        <div class="p-3 rounded-xl rounded-tr-sm text-white max-w-[85%] shadow-sm leading-relaxed bg-sky-500">
           ${escapeHtml(text)}
         </div>
       `;
@@ -1816,12 +1806,11 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
       typingDiv.id = 'chat-typing-indicator';
       typingDiv.className = 'flex items-start gap-2.5';
       typingDiv.innerHTML = `
-        <div class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-mono font-bold text-white shrink-0 mt-0.5"
-          style="background-color: var(--accent-primary);">
+        <div class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-mono font-bold text-white shrink-0 mt-0.5 bg-sky-500">
           AI
         </div>
         <div class="p-3 rounded-xl rounded-tl-sm border shadow-sm flex items-center gap-1.5"
-          style="background-color: var(--bg-card-subtle); border-color: var(--border-color);">
+          style="background-color: var(--bg-surface-subtle); border-color: var(--border-color);">
           <span class="w-1.5 h-1.5 rounded-full bg-sky-400 chat-dot"></span>
           <span class="w-1.5 h-1.5 rounded-full bg-sky-400 chat-dot"></span>
           <span class="w-1.5 h-1.5 rounded-full bg-sky-400 chat-dot"></span>
@@ -1847,7 +1836,7 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
     function formatMarkdown(text) {
       return text
         .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="underline font-bold" style="color: var(--accent-primary);">$1</a>')
+        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" class="underline font-bold text-sky-400">$1</a>')
         .replace(/\n\n/g, '<br/><br/>')
         .replace(/\n/g, '<br/>');
     }
@@ -1872,9 +1861,9 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
       } else if (q.includes("how many years") || q.includes("experience") || q.includes("background") || q.includes("years") || q.includes("summary") || q.includes("about")) {
         answer = "👨‍💻 **Professional Profile Summary:**\n\nAakash Patwa is a **Senior Java Backend Developer** with **4+ years of industry experience** at Tata Consultancy Services (TCS), Pune.\n\nHe specializes in building resilient distributed microservices using **Java 8/11/17/21, Spring Boot, Apache Kafka, Redis, and PostgreSQL**, with deep experience in zero-downtime DB migrations, containerized Linux environments, and modern developer tooling.";
       } else if (q.includes("project") || q.includes("rag") || q.includes("codebase") || q.includes("vector") || q.includes("ai")) {
-        answer = "💻 **Featured Project — Codebase RAG Chat:**\n\nA high-performance developer tool built with **Next.js, Spring Boot, PostgreSQL, and pgvector**:\n\n• Indexes Git repositories into 1536-dimensional vector embeddings.\n• Conducts sub-2ms cosine similarity nearest-neighbor retrieval.\n• Streams contextual, line-cited code explanations token-by-token over Server-Sent Events (SSE).\n• Includes GitHub OAuth authentication and asynchronous background chunking pipelines.\n\n*You can also test the interactive simulator in Section 3 of this page!*";
+        answer = "💻 **Featured Project — Codebase RAG Chat:**\n\nA high-performance developer tool built with **Next.js, Spring Boot, PostgreSQL, and pgvector**:\n\n• Indexes Git repositories into 1536-dimensional vector embeddings.\n• Conducts sub-2ms cosine similarity nearest-neighbor retrieval.\n• Streams contextual, line-cited code explanations token-by-token over Server-Sent Events (SSE).\n• Includes GitHub OAuth authentication and asynchronous background chunking pipelines.\n\n*You can also test the interactive simulator in Section 2 of this page!*";
       } else if (q.includes("contact") || q.includes("email") || q.includes("phone") || q.includes("reach") || q.includes("call") || q.includes("hire") || q.includes("location") || q.includes("linkedin") || q.includes("github")) {
-        answer = "📬 **Contact & Communication Coordinates:**\n\n• **Email:** [ptwaakash@gmail.com](mailto:ptwaakash@gmail.com)\n• **Phone:** [+91 8530603015](tel:+918530603015)\n• **Location:** Pune, India\n• **LinkedIn:** [linkedin.com/in/aakash-kumar-58533b145](https://www.linkedin.com/in/aakash-kumar-58533b145/)\n• **GitHub:** [github.com/Aakashptw](https://github.com/Aakashptw)\n\nFeel free to click **'Download CV'** at the top of this page to save his 1-page PDF resume!";
+        answer = "📬 **Contact & Communication Coordinates:**\n\n• **Email:** [ptwaakash@gmail.com](mailto:ptwaakash@gmail.com)\n• **Phone:** [+91 8530603015](tel:+918530603015)\n• **Location:** Pune, India\n• **LinkedIn:** [linkedin.com/in/aakash-kumar-58533b145](https://www.linkedin.com/in/aakash-kumar-58533b145/)\n• **GitHub:** [github.com/Aakashptw](https://github.com/Aakashptw)\n\nFeel free to click **'Download ATS Resume'** at the top or bottom of this page to export his 1-page PDF resume!";
       } else if (q.includes("education") || q.includes("degree") || q.includes("college") || q.includes("university") || q.includes("cgpa") || q.includes("marks") || q.includes("dahod") || q.includes("navsari")) {
         answer = "🎓 **Academic Foundations:**\n\n• **Bachelor of Engineering**\nGovernment Engineering College, Dahod (Dec 2021) | **CGPA: 7.85 / 10**\n\n• **Diploma in Engineering — Computer Engineering**\nGovernment Polytechnic, Navsari (Dec 2018) | **CGPA: 8.99 / 10 (Distinction)**";
       } else if (q.includes("mentor") || q.includes("leadership") || q.includes("cursor") || q.includes("claude") || q.includes("team")) {
@@ -1896,12 +1885,11 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
       const msgDiv = document.createElement('div');
       msgDiv.className = 'flex items-start gap-2.5';
       msgDiv.innerHTML = `
-        <div class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-mono font-bold text-white shrink-0 mt-0.5"
-          style="background-color: var(--accent-primary);">
+        <div class="w-6 h-6 rounded-md flex items-center justify-center text-[10px] font-mono font-bold text-white shrink-0 mt-0.5 bg-sky-500">
           AI
         </div>
         <div class="p-3 rounded-xl rounded-tl-sm border max-w-[85%] space-y-1.5 shadow-sm leading-relaxed"
-          style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-body);">
+          style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-body);">
           ${formatMarkdown(rawText)}
         </div>
       `;
