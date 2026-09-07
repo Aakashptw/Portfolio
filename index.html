@@ -363,11 +363,12 @@
       <div class="flex items-center gap-2.5 sm:gap-3">
         <!-- Background Music Player Header Pill -->
         <button id="music-header-btn" onclick="togglePortfolioMusic()"
-          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold border transition cursor-pointer hover:border-sky-400 group"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-semibold border transition cursor-pointer hover:border-sky-400 group shadow-sm"
           style="background-color: var(--bg-card-subtle); color: var(--text-title); border-color: var(--border-color);"
           title="Play 'All The Stars' by Kendrick Lamar & SZA">
-          <span id="music-header-icon" class="text-sky-400">▶</span>
-          <span id="music-header-label" class="hidden md:inline">Play Music</span>
+          <span class="text-sky-400 font-bold">🎵</span>
+          <span id="music-header-icon" class="text-sky-400 font-bold">▶</span>
+          <span id="music-header-label" class="inline">Play Music</span>
           <div id="music-header-bars" class="hidden items-end gap-0.5 h-3.5">
             <span class="w-0.5 bg-sky-400 rounded-full h-2 animate-pulse"></span>
             <span class="w-0.5 bg-emerald-400 rounded-full h-3.5 animate-pulse" style="animation-delay: 0.15s"></span>
@@ -512,6 +513,27 @@
             style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--accent-primary);">
             <span>📋</span> Copy Tech Profile Summary
           </button>
+
+          <!-- Interactive Music Track Player Pill in Profile Card -->
+          <div class="pt-1">
+            <button id="music-profile-btn" onclick="togglePortfolioMusic()"
+              class="w-full py-2.5 px-3 rounded-lg border text-xs font-mono font-semibold flex items-center justify-between gap-2 hover:border-sky-400 transition cursor-pointer group"
+              style="background-color: var(--bg-card-subtle); border-color: var(--border-color); color: var(--text-title);">
+              <div class="flex items-center gap-2 truncate">
+                <span class="text-sm text-sky-400">🎵</span>
+                <span id="music-profile-label" class="truncate font-sans font-semibold text-xs">All The Stars</span>
+              </div>
+              <div class="flex items-center gap-2 shrink-0">
+                <div id="music-profile-bars" class="hidden items-end gap-0.5 h-3">
+                  <span class="w-0.5 bg-sky-400 rounded-full h-2 animate-pulse"></span>
+                  <span class="w-0.5 bg-emerald-400 rounded-full h-3 animate-pulse" style="animation-delay: 0.15s"></span>
+                  <span class="w-0.5 bg-sky-400 rounded-full h-1.5 animate-pulse" style="animation-delay: 0.3s"></span>
+                </div>
+                <span id="music-profile-action" class="px-2 py-0.5 rounded text-[10px] font-bold text-white shadow-sm"
+                  style="background-color: var(--accent-primary);">▶ Play</span>
+              </div>
+            </button>
+          </div>
 
         </div>
 
@@ -1576,6 +1598,9 @@
     }
 
     function updateMusicUI(playing) {
+      const profileAction = document.getElementById('music-profile-action');
+      const profileBars = document.getElementById('music-profile-bars');
+
       if (playing) {
         if (headerIcon) headerIcon.textContent = '⏸';
         if (headerLabel) headerLabel.textContent = 'Pause Music';
@@ -1585,6 +1610,14 @@
         }
         if (toastPlayIcon) toastPlayIcon.textContent = '⏸';
         if (toastPlayText) toastPlayText.textContent = 'Pause Track';
+        if (profileAction) {
+          profileAction.textContent = '⏸ Pause';
+          profileAction.style.backgroundColor = 'var(--accent-secondary)';
+        }
+        if (profileBars) {
+          profileBars.classList.remove('hidden');
+          profileBars.classList.add('flex');
+        }
       } else {
         if (headerIcon) headerIcon.textContent = '▶';
         if (headerLabel) headerLabel.textContent = 'Play Music';
@@ -1594,6 +1627,14 @@
         }
         if (toastPlayIcon) toastPlayIcon.textContent = '▶';
         if (toastPlayText) toastPlayText.textContent = 'Play Track';
+        if (profileAction) {
+          profileAction.textContent = '▶ Play';
+          profileAction.style.backgroundColor = 'var(--accent-primary)';
+        }
+        if (profileBars) {
+          profileBars.classList.add('hidden');
+          profileBars.classList.remove('flex');
+        }
       }
     }
 
