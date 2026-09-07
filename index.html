@@ -189,6 +189,38 @@
     /* ==========================================================
        SPIDER-MAN SLIDE & PENDULUM GREETING ANIMATIONS
        ========================================================== */
+    #spidey-greeting-container {
+      position: fixed;
+      top: 0;
+      right: clamp(16px, 8vw, 130px);
+      z-index: 99999;
+      transform: translateY(-135%);
+      transition: transform 0.85s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+    }
+
+    #spidey-greeting-container.spidey-active {
+      transform: translateY(0) !important;
+    }
+
+    #spidey-pendulum-wrapper {
+      transform-origin: top center;
+      animation: spideyPendulum 3.5s ease-in-out infinite alternate;
+    }
+
+    #spidey-speech-bubble {
+      opacity: 0;
+      transform: scale(0.85);
+      transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+    }
+
+    #spidey-speech-bubble.bubble-active {
+      opacity: 1 !important;
+      transform: scale(1) !important;
+      pointer-events: auto !important;
+    }
+
     @keyframes spideyPendulum {
       0% {
         transform: rotate(-3deg);
@@ -208,8 +240,8 @@
     }
 
     .spidey-eye {
-      transform-origin: 70px 150px;
-      animation: spideyEyeBlink 4.5s ease-in-out infinite;
+      transform-origin: 65px 145px;
+      animation: spideyEyeBlink 4s ease-in-out infinite;
     }
 
     @keyframes spideySpin360 {
@@ -356,9 +388,7 @@
   <!-- ==========================================================
        SPIDER-MAN GREETING OVERLAY (SLIDES FROM ABOVE ON LOAD)
        ========================================================== -->
-  <div id="spidey-greeting-container"
-    class="no-print fixed top-0 z-50 pointer-events-none transition-all duration-700 ease-out"
-    style="right: clamp(12px, 8vw, 120px); transform: translateY(-135%);">
+  <div id="spidey-greeting-container" class="no-print">
 
     <!-- Pendulum Swinging Wrapper -->
     <div id="spidey-pendulum-wrapper"
@@ -436,7 +466,7 @@
 
       <!-- Speech Bubble (Positioned relative to Spidey) -->
       <div id="spidey-speech-bubble"
-        class="absolute top-[80px] sm:top-[120px] right-[-10px] sm:right-auto sm:left-[-320px] md:left-[-360px] w-[290px] sm:w-[350px] p-4 rounded-2xl border shadow-2xl backdrop-blur-xl transition-all duration-500 transform scale-95 opacity-0 pointer-events-auto"
+        class="absolute top-[160px] sm:top-[90px] right-0 sm:right-auto sm:-left-[350px] w-[88vw] max-w-[340px] sm:w-[350px] p-4 rounded-2xl border shadow-2xl backdrop-blur-xl"
         style="background-color: rgba(18, 19, 22, 0.96); border-color: rgba(225, 29, 72, 0.45); box-shadow: 0 20px 40px -10px rgba(225, 29, 72, 0.2), 0 10px 25px -5px rgba(0,0,0,0.85);">
 
         <!-- Bubble Pointer Arrow -->
@@ -1543,7 +1573,7 @@
 
       <!-- Resume Viewer Body -->
       <div class="flex-1 w-full bg-slate-900 relative overflow-hidden">
-        <iframe id="resume-viewer-frame" src="resume.pdf#toolbar=1&navpanes=0" class="w-full h-full border-0"
+        <iframe id="resume-viewer-frame" src="about:blank" data-src="resume.pdf#toolbar=1&navpanes=0" class="w-full h-full border-0"
           title="Aakash Patwa Resume">
           <p class="p-8 text-center font-mono text-sm" style="color: var(--text-muted);">
             Your browser doesn't support embedded PDFs.
@@ -1778,6 +1808,10 @@
 
     // Resume Viewer Modal
     function openResumeModal() {
+      const frame = document.getElementById('resume-viewer-frame');
+      if (frame && (!frame.src || frame.src === 'about:blank' || frame.src.endsWith('about:blank'))) {
+        frame.src = frame.getAttribute('data-src') || 'resume.pdf#toolbar=1&navpanes=0';
+      }
       document.getElementById('resume-modal').classList.remove('hidden');
     }
     function closeResumeModal() {
@@ -2090,7 +2124,9 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
         const AudioContextClass = window.AudioContext || window.webkitAudioContext;
         if (!AudioContextClass) return;
         const ctx = new AudioContextClass();
-        if (ctx.state === 'suspended') ctx.resume();
+        if (ctx.state === 'suspended') {
+          ctx.resume().catch(() => {});
+        }
 
         // Synthesize web-shooter "THWIP!" using dual oscillators
         const osc = ctx.createOscillator();
@@ -2108,7 +2144,7 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
         osc.start();
         osc.stop(ctx.currentTime + 0.16);
       } catch (err) {
-        // Fallback silently if audio context is blocked
+        // Fallback silently
       }
     }
 
@@ -2118,15 +2154,11 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
       if (!container || !bubble) return;
 
       isSpideyVisible = true;
-      playThwipSound();
-
-      // Slide down from ceiling
-      container.style.transform = 'translateY(0)';
+      container.classList.add('spidey-active');
 
       // Open speech bubble with slight delay after landing
       setTimeout(() => {
-        bubble.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-        bubble.classList.add('opacity-100', 'scale-100');
+        bubble.classList.add('bubble-active');
       }, 700);
 
       // Auto-retract after 14 seconds if no interaction occurs
@@ -2143,12 +2175,10 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
       const bubble = document.getElementById('spidey-speech-bubble');
       if (!container || !bubble) return;
 
-      playThwipSound();
-      bubble.classList.remove('opacity-100', 'scale-100');
-      bubble.classList.add('opacity-0', 'scale-95');
+      bubble.classList.remove('bubble-active');
 
       setTimeout(() => {
-        container.style.transform = 'translateY(-135%)';
+        container.classList.remove('spidey-active');
         isSpideyVisible = false;
       }, 250);
     }
@@ -2190,15 +2220,23 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
       }, 350);
     }
 
-    // Auto-summon Spider-Man 1 second after page loads
-    window.addEventListener('load', () => {
-      setTimeout(summonSpiderman, 1000);
-    });
+    // Auto-summon Spider-Man as soon as DOM is ready
+    function initSpideyGreeting() {
+      setTimeout(summonSpiderman, 500);
+    }
+
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+      initSpideyGreeting();
+    } else {
+      document.addEventListener('DOMContentLoaded', initSpideyGreeting);
+      window.addEventListener('load', initSpideyGreeting);
+    }
 
     // Keyboard shortcut 'S' to summon Spider-Man anytime!
     window.addEventListener('keydown', (e) => {
       if (e.key.toLowerCase() === 's' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
         if (!isSpideyVisible) {
+          playThwipSound();
           summonSpiderman();
         } else {
           dismissSpidey();
