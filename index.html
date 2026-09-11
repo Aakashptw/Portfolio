@@ -15,6 +15,9 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap"
     rel="stylesheet">
 
+  <!-- Devicon CDN (Official Tech Stack Icons) -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -470,8 +473,74 @@
 
     </div>
 
+    <!-- Interactive Core Tech Stack Icons Bar (At A Glance) -->
+    <div class="z-10 mt-6 w-full max-w-2xl px-2">
+      <div class="apple-glass-card rounded-2xl p-3.5 sm:p-4 border border-white/10 flex flex-col gap-3">
+        <div class="flex items-center justify-between text-[11px] font-mono text-stone-400 px-1">
+          <span class="flex items-center gap-1.5 uppercase font-bold text-sky-400">
+            <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span>
+            <span>Core Production Stack</span>
+          </span>
+          <button onclick="openModal('skills')" class="hover:text-white transition cursor-pointer underline decoration-stone-600 hover:decoration-sky-400">
+            Explore All 20+ Skills →
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-4 sm:grid-cols-8 gap-2 text-center">
+          <!-- Java -->
+          <div class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-sky-400/40 hover:bg-white/10 transition group cursor-pointer flex flex-col items-center gap-1.5"
+               onclick="openModal('skills')" title="Java 8 / 11 / 17 (Advanced)">
+            <i class="devicon-java-plain colored text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-mono text-stone-300">Java</span>
+          </div>
+          <!-- Spring Boot -->
+          <div class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-emerald-400/40 hover:bg-white/10 transition group cursor-pointer flex flex-col items-center gap-1.5"
+               onclick="openModal('skills')" title="Spring Boot & Cloud">
+            <i class="devicon-spring-original colored text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-mono text-stone-300">Spring</span>
+          </div>
+          <!-- Apache Kafka -->
+          <div class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-purple-400/40 hover:bg-white/10 transition group cursor-pointer flex flex-col items-center gap-1.5"
+               onclick="openModal('skills')" title="Apache Kafka Event Streaming">
+            <i class="devicon-apachekafka-original colored text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-mono text-stone-300">Kafka</span>
+          </div>
+          <!-- Redis -->
+          <div class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-red-400/40 hover:bg-white/10 transition group cursor-pointer flex flex-col items-center gap-1.5"
+               onclick="openModal('skills')" title="Redis L2 Distributed Caching">
+            <i class="devicon-redis-plain colored text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-mono text-stone-300">Redis</span>
+          </div>
+          <!-- PostgreSQL -->
+          <div class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-blue-400/40 hover:bg-white/10 transition group cursor-pointer flex flex-col items-center gap-1.5"
+               onclick="openModal('skills')" title="PostgreSQL & pgvector">
+            <i class="devicon-postgresql-plain colored text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-mono text-stone-300">Postgres</span>
+          </div>
+          <!-- Docker -->
+          <div class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-cyan-400/40 hover:bg-white/10 transition group cursor-pointer flex flex-col items-center gap-1.5"
+               onclick="openModal('skills')" title="Docker Virtualization">
+            <i class="devicon-docker-plain colored text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-mono text-stone-300">Docker</span>
+          </div>
+          <!-- Kubernetes -->
+          <div class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-blue-500/40 hover:bg-white/10 transition group cursor-pointer flex flex-col items-center gap-1.5"
+               onclick="openModal('skills')" title="Kubernetes Cluster Orchestration">
+            <i class="devicon-kubernetes-plain colored text-2xl group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-mono text-stone-300">K8s</span>
+          </div>
+          <!-- Linux -->
+          <div class="p-2 sm:p-2.5 rounded-xl bg-white/5 border border-white/5 hover:border-amber-400/40 hover:bg-white/10 transition group cursor-pointer flex flex-col items-center gap-1.5"
+               onclick="openModal('skills')" title="Linux Systems Administration">
+            <i class="devicon-linux-plain text-2xl text-amber-400 group-hover:scale-110 transition-transform"></i>
+            <span class="text-[10px] font-mono text-stone-300">Linux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Toggle Full Dossier Button -->
-    <div class="z-10 mt-8">
+    <div class="z-10 mt-6">
       <button onclick="toggleDossierView()"
         class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl text-xs font-mono text-stone-300 hover:text-white hover:border-white/25 hover:bg-white/10 transition cursor-pointer shadow-sm">
         <span>📄</span>
@@ -1051,11 +1120,21 @@
                 <span class="text-stone-300">+30% Integration Speed</span>
               </div>
               <div class="flex flex-wrap gap-1.5 pt-1 text-[11px] font-mono">
-                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-stone-300">Java 11</span>
-                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-stone-300">Spring Boot</span>
-                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-stone-300">Apache Kafka</span>
-                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-stone-300">Redis L2</span>
-                <span class="px-2 py-0.5 rounded border border-white/10 bg-white/5 text-stone-300">PostgreSQL</span>
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-stone-200">
+                  <i class="devicon-java-plain colored"></i> Java 11
+                </span>
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-stone-200">
+                  <i class="devicon-spring-original colored"></i> Spring Boot
+                </span>
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-stone-200">
+                  <i class="devicon-apachekafka-original colored"></i> Apache Kafka
+                </span>
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-stone-200">
+                  <i class="devicon-redis-plain colored"></i> Redis L2
+                </span>
+                <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg border border-white/10 bg-white/5 text-stone-200">
+                  <i class="devicon-postgresql-plain colored"></i> PostgreSQL
+                </span>
               </div>
             </div>
 
@@ -1099,52 +1178,170 @@
       },
       skills: {
         title: "Technical Competencies & Stack",
-        subtitle: "Production-Proven Backend Technologies",
+        subtitle: "Production-Proven Backend Technologies & Tools",
         iconHtml: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#856ED9" stroke-width="2"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path></svg>`,
         iconBg: "bg-[#856ED9]/20",
         content: `
-          <div class="space-y-5">
-            <div class="space-y-2">
-              <h4 class="text-xs font-mono font-bold uppercase text-sky-400">// CORE LANGUAGES & RUNTIMES</h4>
-              <div class="flex flex-wrap gap-2 text-xs font-mono">
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-white font-bold">Java 8 / 11 / 17 (Advanced)</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">SQL & Relational Tuning</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">Bash / Linux Shell Scripting</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">TypeScript / Next.js</span>
+          <div class="space-y-6">
+            <!-- Languages & Core -->
+            <div class="space-y-2.5">
+              <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 flex items-center gap-1.5">
+                <span>☕</span> // CORE LANGUAGES & RUNTIMES
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-java-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Java 8 / 11 / 17</span>
+                    <span class="text-[10px] text-stone-400">Core, Multithreading, JVM Performance</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-postgresql-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">SQL & Relational Tuning</span>
+                    <span class="text-[10px] text-stone-400">Complex Queries, Execution Plans, Indexing</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-bash-plain text-emerald-400 text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Bash / Linux Shell</span>
+                    <span class="text-[10px] text-stone-400">Automation Scripts, Cron & Log Processing</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-typescript-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">TypeScript / Next.js</span>
+                    <span class="text-[10px] text-stone-400">Fullstack Web & SSE Token Streaming</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="space-y-2">
-              <h4 class="text-xs font-mono font-bold uppercase text-emerald-400">// FRAMEWORKS & LIBRARIES</h4>
-              <div class="flex flex-wrap gap-2 text-xs font-mono">
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-white font-bold">Spring Boot 3</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">Spring Cloud & Config</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">Spring Batch</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">Hibernate / Spring Data JPA</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">Resilience4J (Circuit Breakers)</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">OpenAPI / Swagger</span>
+            <!-- Frameworks & Backend -->
+            <div class="space-y-2.5">
+              <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
+                <span>🍃</span> // FRAMEWORKS & ARCHITECTURE
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-spring-original colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Spring Boot 3</span>
+                    <span class="text-[10px] text-stone-400">REST APIs, Actuator, Security & IOC</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-spring-original text-emerald-400 text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Spring Cloud & Batch</span>
+                    <span class="text-[10px] text-stone-400">Feign Client, Config Server, Checkpoints</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-hibernate-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Hibernate & Spring Data JPA</span>
+                    <span class="text-[10px] text-stone-400">ORM, N+1 Query Optimization, L2 Cache</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <span class="text-lg shrink-0">🛡️</span>
+                  <div>
+                    <span class="text-white font-bold block">Resilience4J & Swagger</span>
+                    <span class="text-[10px] text-stone-400">Circuit Breakers, Retries, OpenAPI Docs</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="space-y-2">
-              <h4 class="text-xs font-mono font-bold uppercase text-purple-400">// MESSAGING & DISTRIBUTED DATA</h4>
-              <div class="flex flex-wrap gap-2 text-xs font-mono">
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-white font-bold">Apache Kafka (Partitions & Offsets)</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-white font-bold">Redis L2 Distributed Cache (TTL/LRU)</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">RabbitMQ</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">PostgreSQL + pgvector</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">IBM DB2</span>
+            <!-- Messaging & Data -->
+            <div class="space-y-2.5">
+              <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-purple-400 flex items-center gap-1.5">
+                <span>⚡</span> // DISTRIBUTED MESSAGING & CACHING
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-apachekafka-original colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Apache Kafka</span>
+                    <span class="text-[10px] text-stone-400">Event Streams, Partitions, Asynchronous Acks</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-redis-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Redis L2 Distributed Cache</span>
+                    <span class="text-[10px] text-stone-400">Dynamic TTL, LRU Eviction, RAM In-Memory</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-postgresql-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">PostgreSQL + pgvector</span>
+                    <span class="text-[10px] text-stone-400">Relational DB & 1536-dim Vector Search</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-rabbitmq-original colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">RabbitMQ & IBM DB2</span>
+                    <span class="text-[10px] text-stone-400">Enterprise Queues & Historical Cutover</span>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div class="space-y-2">
-              <h4 class="text-xs font-mono font-bold uppercase text-amber-400">// DEVOPS & OBSERVABILITY</h4>
-              <div class="flex flex-wrap gap-2 text-xs font-mono">
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">Docker Virtualization on Linux</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">Jenkins Automated CI/CD</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">Kong API Gateway</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">ELK Stack (Elasticsearch, Kibana)</span>
-                <span class="px-3 py-1.5 rounded-xl border border-white/10 bg-white/5 text-stone-300">Splunk Monitoring</span>
+            <!-- DevOps & Observability -->
+            <div class="space-y-2.5">
+              <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1.5">
+                <span>🐳</span> // DEVOPS & OBSERVABILITY
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono">
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-docker-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Docker Virtualization</span>
+                    <span class="text-[10px] text-stone-400">Multi-stage Builds, Container Packaging</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-kubernetes-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Kubernetes Orchestration</span>
+                    <span class="text-[10px] text-stone-400">Deployments, Services & Ingress</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-jenkins-line colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Jenkins CI/CD Automation</span>
+                    <span class="text-[10px] text-stone-400">Pipelines, Build Automation, +40% Velocity</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-linux-plain text-amber-400 text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Linux & Kong Gateway</span>
+                    <span class="text-[10px] text-stone-400">Microservice Routing & Systems Admin</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-terraform-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">Terraform & Ansible</span>
+                    <span class="text-[10px] text-stone-400">Infrastructure as Code (IaC)</span>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2.5 p-2.5 rounded-xl border border-white/10 bg-white/5">
+                  <i class="devicon-git-plain colored text-xl shrink-0"></i>
+                  <div>
+                    <span class="text-white font-bold block">ELK Stack & Git</span>
+                    <span class="text-[10px] text-stone-400">Elasticsearch Log Analysis & Version Control</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
