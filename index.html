@@ -110,6 +110,71 @@
       transform: translateY(-2px);
     }
 
+    /* ==========================================================
+       PROGRESSIVE HOVER DISCLOSURE SYSTEM
+       ========================================================== */
+    .hover-expand-card {
+      cursor: pointer;
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      outline: none;
+    }
+
+    .hover-expand-card:hover,
+    .hover-expand-card:focus-visible,
+    .hover-expand-card.is-expanded {
+      border-color: var(--accent-primary);
+      box-shadow: 0 16px 36px -10px rgba(56, 189, 248, 0.18), var(--shadow-elevation);
+      transform: translateY(-3px);
+    }
+
+    .hover-reveal-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transform: translateY(6px);
+      transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .hover-expand-card:hover .hover-reveal-content,
+    .hover-expand-card:focus-within .hover-reveal-content,
+    .hover-expand-card.is-expanded .hover-reveal-content {
+      max-height: 800px;
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .hover-hint-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.25s ease, opacity 0.25s ease;
+    }
+
+    .hover-expand-card:hover .hover-hint-badge,
+    .hover-expand-card.is-expanded .hover-hint-badge {
+      color: var(--accent-primary);
+    }
+
+    .hover-hint-arrow {
+      display: inline-block;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .hover-expand-card:hover .hover-hint-arrow,
+    .hover-expand-card.is-expanded .hover-hint-arrow {
+      transform: translateY(1px) rotate(180deg);
+    }
+
     /* Continuous Marquee Animation */
     @keyframes marqueeScroll {
       0% {
@@ -719,43 +784,79 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <!-- Metric 1 -->
-        <div class="editorial-card rounded-2xl p-6 sm:p-8 space-y-3">
-          <div class="text-4xl sm:text-5xl font-mono font-bold text-sky-400">+35%</div>
-          <h3 class="text-base font-bold" style="color: var(--text-title);">Kafka Event Streaming Throughput</h3>
-          <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
-            Engineered asynchronous Kafka streaming topologies for tax submission ingestion under seasonal filing
-            surges, decoupling downstream accounting services.
-          </p>
+        <div class="editorial-card hover-expand-card rounded-2xl p-6 sm:p-7 space-y-2.5 group" tabindex="0"
+          title="Hover or click to view production details">
+          <div class="flex items-center justify-between">
+            <div class="text-4xl sm:text-5xl font-mono font-bold text-sky-400">+35%</div>
+            <span class="hover-hint-badge">
+              <span>Details</span>
+              <span class="hover-hint-arrow">↓</span>
+            </span>
+          </div>
+          <h3 class="text-base font-bold leading-snug" style="color: var(--text-title);">Kafka Event Streaming Throughput</h3>
+          <div class="hover-reveal-content pt-2 border-t border-white/5">
+            <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
+              Engineered asynchronous Kafka streaming topologies for tax submission ingestion under seasonal filing
+              surges, decoupling downstream accounting services.
+            </p>
+          </div>
         </div>
 
         <!-- Metric 2 -->
-        <div class="editorial-card rounded-2xl p-6 sm:p-8 space-y-3">
-          <div class="text-4xl sm:text-5xl font-mono font-bold text-emerald-400">-25%</div>
-          <h3 class="text-base font-bold" style="color: var(--text-title);">Query Response Latency</h3>
-          <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
-            Introduced Redis L2 multi-tier memory caching with dynamic TTL and LRU eviction, slashing read contention
-            against PostgreSQL by 20%.
-          </p>
+        <div class="editorial-card hover-expand-card rounded-2xl p-6 sm:p-7 space-y-2.5 group" tabindex="0"
+          title="Hover or click to view production details">
+          <div class="flex items-center justify-between">
+            <div class="text-4xl sm:text-5xl font-mono font-bold text-emerald-400">-25%</div>
+            <span class="hover-hint-badge">
+              <span>Details</span>
+              <span class="hover-hint-arrow">↓</span>
+            </span>
+          </div>
+          <h3 class="text-base font-bold leading-snug" style="color: var(--text-title);">Query Response Latency</h3>
+          <div class="hover-reveal-content pt-2 border-t border-white/5">
+            <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
+              Introduced Redis L2 multi-tier memory caching with dynamic TTL and LRU eviction, slashing read contention
+              against PostgreSQL by 20%.
+            </p>
+          </div>
         </div>
 
         <!-- Metric 3 -->
-        <div class="editorial-card rounded-2xl p-6 sm:p-8 space-y-3">
-          <div class="text-4xl sm:text-5xl font-mono font-bold text-amber-400">+40%</div>
-          <h3 class="text-base font-bold" style="color: var(--text-title);">CI/CD Deployment Velocity</h3>
-          <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
-            Containerized monolithic services with Docker on Linux, provisioned environments using Terraform &
-            Ansible, and automated Jenkins pipelines.
-          </p>
+        <div class="editorial-card hover-expand-card rounded-2xl p-6 sm:p-7 space-y-2.5 group" tabindex="0"
+          title="Hover or click to view production details">
+          <div class="flex items-center justify-between">
+            <div class="text-4xl sm:text-5xl font-mono font-bold text-amber-400">+40%</div>
+            <span class="hover-hint-badge">
+              <span>Details</span>
+              <span class="hover-hint-arrow">↓</span>
+            </span>
+          </div>
+          <h3 class="text-base font-bold leading-snug" style="color: var(--text-title);">CI/CD Deployment Velocity</h3>
+          <div class="hover-reveal-content pt-2 border-t border-white/5">
+            <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
+              Containerized monolithic services with Docker on Linux, provisioned environments using Terraform &
+              Ansible, and automated Jenkins pipelines.
+            </p>
+          </div>
         </div>
 
         <!-- Metric 4 -->
-        <div class="editorial-card rounded-2xl p-6 sm:p-8 space-y-3">
-          <div class="text-4xl sm:text-5xl font-mono font-bold" style="color: var(--text-title);">100%</div>
-          <h3 class="text-base font-bold" style="color: var(--text-title);">Cutover Data Integrity</h3>
-          <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
-            Guided batch data migration from legacy IBM DB2 to PostgreSQL using Spring Batch with checksum verification
-            and zero operational downtime.
-          </p>
+        <div class="editorial-card hover-expand-card rounded-2xl p-6 sm:p-7 space-y-2.5 group" tabindex="0"
+          title="Hover or click to view production details">
+          <div class="flex items-center justify-between">
+            <div class="text-4xl sm:text-5xl font-mono font-bold" style="color: var(--text-title);">100%</div>
+            <span class="hover-hint-badge">
+              <span>Details</span>
+              <span class="hover-hint-arrow">↓</span>
+            </span>
+          </div>
+          <h3 class="text-base font-bold leading-snug" style="color: var(--text-title);">Cutover Data Integrity</h3>
+          <div class="hover-reveal-content pt-2 border-t border-white/5">
+            <p class="text-xs sm:text-sm leading-relaxed" style="color: var(--text-muted);">
+              Guided batch data migration from legacy IBM DB2 to PostgreSQL using Spring Batch with checksum verification
+              and zero operational downtime.
+            </p>
+          </div>
         </div>
 
       </div>
@@ -784,13 +885,19 @@
       <div class="space-y-10">
 
         <!-- Case Study 01: Ghana Revenue Authority Platform -->
-        <article class="editorial-card rounded-3xl p-8 sm:p-12 space-y-6 relative overflow-hidden">
+        <article class="editorial-card hover-expand-card rounded-3xl p-8 sm:p-12 space-y-6 relative overflow-hidden group" tabindex="0">
           <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
             <span class="px-3 py-1 rounded-full border font-bold"
               style="background-color: var(--accent-tag-bg); border-color: var(--accent-tag-border); color: var(--accent-primary);">
               01 · SHIPPED PLATFORM · TATA CONSULTANCY SERVICES
             </span>
-            <span style="color: var(--text-muted);">Ghana Revenue Authority · Mar 2025 – Present</span>
+            <div class="flex items-center gap-3">
+              <span class="hover-hint-badge">
+                <span>Architecture Breakdown</span>
+                <span class="hover-hint-arrow">↓</span>
+              </span>
+              <span style="color: var(--text-muted);">Ghana Revenue Authority · Mar 2025 – Present</span>
+            </div>
           </div>
 
           <div class="space-y-3">
@@ -798,12 +905,6 @@
               style="color: var(--text-hero);">
               Turning a monolithic taxation core into high-throughput asynchronous Kafka event streams.
             </h3>
-            <p class="text-base sm:text-lg leading-relaxed text-justify" style="color: var(--text-body);">
-              National revenue administrations faced severe latency bottlenecks under seasonal tax filing deadlines.
-              Spearheaded the microservice decomposition and event-driven re-architecture using Java 11 and Spring Boot.
-              Formulated asynchronous Apache Kafka consumer topologies to isolate compute workflows, and abstracted
-              microservice intercommunication via Kong API Gateway and Feign Client.
-            </p>
           </div>
 
           <!-- Impact Pill Banner -->
@@ -818,30 +919,40 @@
             <span class="text-xs font-mono" style="color: var(--text-muted);">Based on production telemetry</span>
           </div>
 
-          <!-- Tech Stack Tags -->
-          <div class="pt-2 flex flex-wrap gap-2 text-xs font-mono">
-            <span class="px-3 py-1 rounded-full border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Java
-              11</span>
-            <span class="px-3 py-1 rounded-full border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Spring
-              Boot</span>
-            <span class="px-3 py-1 rounded-full border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Apache
-              Kafka</span>
-            <span class="px-3 py-1 rounded-full border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Redis
-              L2 Cache</span>
-            <span class="px-3 py-1 rounded-full border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">PostgreSQL</span>
-            <span class="px-3 py-1 rounded-full border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Kong
-              Gateway</span>
-            <span class="px-3 py-1 rounded-full border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Feign
-              Client</span>
-            <span class="px-3 py-1 rounded-full border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Resilience4J</span>
+          <!-- Hover Reveal Deep Dive -->
+          <div class="hover-reveal-content space-y-5 pt-1 border-t border-white/5">
+            <p class="text-base sm:text-lg leading-relaxed text-justify" style="color: var(--text-body);">
+              National revenue administrations faced severe latency bottlenecks under seasonal tax filing deadlines.
+              Spearheaded the microservice decomposition and event-driven re-architecture using Java 11 and Spring Boot.
+              Formulated asynchronous Apache Kafka consumer topologies to isolate compute workflows, and abstracted
+              microservice intercommunication via Kong API Gateway and Feign Client.
+            </p>
+
+            <!-- Tech Stack Tags -->
+            <div class="flex flex-wrap gap-2 text-xs font-mono">
+              <span class="px-3 py-1 rounded-full border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Java
+                11</span>
+              <span class="px-3 py-1 rounded-full border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Spring
+                Boot</span>
+              <span class="px-3 py-1 rounded-full border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Apache
+                Kafka</span>
+              <span class="px-3 py-1 rounded-full border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Redis
+                L2 Cache</span>
+              <span class="px-3 py-1 rounded-full border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">PostgreSQL</span>
+              <span class="px-3 py-1 rounded-full border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Kong
+                Gateway</span>
+              <span class="px-3 py-1 rounded-full border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Feign
+                Client</span>
+              <span class="px-3 py-1 rounded-full border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Resilience4J</span>
+            </div>
           </div>
         </article>
 
@@ -948,106 +1059,142 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- Area 1 -->
-        <div class="editorial-card rounded-2xl p-7 space-y-4">
+        <div class="editorial-card hover-expand-card rounded-2xl p-6 sm:p-7 space-y-3 group" tabindex="0"
+          title="Hover or click to expand architectural details">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-sky-400 uppercase">01 // EVENT STREAMING</span>
-            <span class="text-base">⚡</span>
+            <div class="flex items-center gap-2.5">
+              <span class="hover-hint-badge">
+                <span>Details</span>
+                <span class="hover-hint-arrow">↓</span>
+              </span>
+              <span class="text-base">⚡</span>
+            </div>
           </div>
           <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
             Distributed Event Streaming & Queues
           </h3>
-          <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
-            Partitioning topologies, asynchronous consumer group rebalancing, and non-blocking backpressure mechanisms
-            in Apache Kafka. Designed to isolate computational tax and accounting microservices under massive concurrent
-            bursts.
-          </p>
-          <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-2">
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Apache
-              Kafka</span>
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Kong
-              Gateway</span>
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Feign
-              Client</span>
+          <div class="hover-reveal-content space-y-3 pt-2 border-t border-white/5">
+            <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+              Partitioning topologies, asynchronous consumer group rebalancing, and non-blocking backpressure mechanisms
+              in Apache Kafka. Designed to isolate computational tax and accounting microservices under massive concurrent
+              bursts.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-1">
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Apache
+                Kafka</span>
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Kong
+                Gateway</span>
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Feign
+                Client</span>
+            </div>
           </div>
         </div>
 
         <!-- Area 2 -->
-        <div class="editorial-card rounded-2xl p-7 space-y-4">
+        <div class="editorial-card hover-expand-card rounded-2xl p-6 sm:p-7 space-y-3 group" tabindex="0"
+          title="Hover or click to expand architectural details">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-emerald-400 uppercase">02 // CACHE & PERSISTENCE</span>
-            <span class="text-base">🚀</span>
+            <div class="flex items-center gap-2.5">
+              <span class="hover-hint-badge">
+                <span>Details</span>
+                <span class="hover-hint-arrow">↓</span>
+              </span>
+              <span class="text-base">🚀</span>
+            </div>
           </div>
           <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
             Distributed Caching & Relational Consistency
           </h3>
-          <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
-            Multi-tier memory caching, dynamic TTL eviction policies, and Hibernate/JPA object-relational mapping
-            performance over PostgreSQL. Alleviated database contention by 20% while speeding query returns by 25%.
-          </p>
-          <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-2">
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Redis
-              L2 Cache</span>
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">PostgreSQL</span>
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Hibernate/JPA</span>
+          <div class="hover-reveal-content space-y-3 pt-2 border-t border-white/5">
+            <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+              Multi-tier memory caching, dynamic TTL eviction policies, and Hibernate/JPA object-relational mapping
+              performance over PostgreSQL. Alleviated database contention by 20% while speeding query returns by 25%.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-1">
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Redis
+                L2 Cache</span>
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">PostgreSQL</span>
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Hibernate/JPA</span>
+            </div>
           </div>
         </div>
 
         <!-- Area 3 -->
-        <div class="editorial-card rounded-2xl p-7 space-y-4">
+        <div class="editorial-card hover-expand-card rounded-2xl p-6 sm:p-7 space-y-3 group" tabindex="0"
+          title="Hover or click to expand architectural details">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-amber-400 uppercase">03 // RELIABILITY & DEVOPS</span>
-            <span class="text-base">🛠️</span>
+            <div class="flex items-center gap-2.5">
+              <span class="hover-hint-badge">
+                <span>Details</span>
+                <span class="hover-hint-arrow">↓</span>
+              </span>
+              <span class="text-base">🛠️</span>
+            </div>
           </div>
           <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
             Zero-Downtime Migration & CI/CD Cadence
           </h3>
-          <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
-            Decomposed monolithic business cores into Dockerized microservices, provisioned environments with Terraform
-            & Ansible, automated Jenkins CI/CD (+40% release cadence), and migrated DB2 to PostgreSQL with 100% data
-            integrity.
-          </p>
-          <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-2">
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Docker/Linux</span>
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Jenkins
-              CI/CD</span>
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">ELK
-              Stack</span>
+          <div class="hover-reveal-content space-y-3 pt-2 border-t border-white/5">
+            <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+              Decomposed monolithic business cores into Dockerized microservices, provisioned environments with Terraform
+              & Ansible, automated Jenkins CI/CD (+40% release cadence), and migrated DB2 to PostgreSQL with 100% data
+              integrity.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-1">
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Docker/Linux</span>
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Jenkins
+                CI/CD</span>
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">ELK
+                Stack</span>
+            </div>
           </div>
         </div>
 
         <!-- Area 4 -->
-        <div class="editorial-card rounded-2xl p-7 space-y-4">
+        <div class="editorial-card hover-expand-card rounded-2xl p-6 sm:p-7 space-y-3 group" tabindex="0"
+          title="Hover or click to expand architectural details">
           <div class="flex items-center justify-between">
             <span class="text-xs font-mono font-bold text-sky-400 uppercase">04 // LEADERSHIP & MENTORSHIP</span>
-            <span class="text-base">🤝</span>
+            <div class="flex items-center gap-2.5">
+              <span class="hover-hint-badge">
+                <span>Details</span>
+                <span class="hover-hint-arrow">↓</span>
+              </span>
+              <span class="text-base">🤝</span>
+            </div>
           </div>
           <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
             Technical Leadership & AI Tooling
           </h3>
-          <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
-            Mentored 4+ junior and trainee software developers on clean architecture, Git collaborative workflows, and
-            Linux debugging. Championed team integration of Claude and Cursor AI tooling, improving test coverage by
-            20%.
-          </p>
-          <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-2">
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Developer
-              Mentorship</span>
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Claude
-              & Cursor AI</span>
-            <span class="px-2.5 py-0.5 rounded border"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Clean
-              Architecture</span>
+          <div class="hover-reveal-content space-y-3 pt-2 border-t border-white/5">
+            <p class="text-sm leading-relaxed" style="color: var(--text-muted);">
+              Mentored 4+ junior and trainee software developers on clean architecture, Git collaborative workflows, and
+              Linux debugging. Championed team integration of Claude and Cursor AI tooling, improving test coverage by
+              20%.
+            </p>
+            <div class="flex flex-wrap gap-1.5 text-xs font-mono pt-1">
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Developer
+                Mentorship</span>
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Claude
+                & Cursor AI</span>
+              <span class="px-2.5 py-0.5 rounded border"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-title);">Clean
+                Architecture</span>
+            </div>
           </div>
         </div>
 
@@ -1074,8 +1221,9 @@
       <div class="space-y-6">
 
         <!-- Role 1 -->
-        <div class="editorial-card rounded-2xl p-8 space-y-4 border-l-4 border-l-sky-400">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+        <div class="editorial-card hover-expand-card rounded-2xl p-7 sm:p-8 space-y-4 border-l-4 border-l-sky-400 group" tabindex="0"
+          title="Hover or click to view production highlights">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
             <div>
               <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
                 Java Developer (Fullstack & Systems)
@@ -1084,39 +1232,48 @@
                 Tata Consultancy Services – Ghana Revenue Authority Project
               </p>
             </div>
-            <span class="text-xs font-mono px-3 py-1 rounded-full border shrink-0"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-muted);">
-              Mar 2025 – Present
-            </span>
+            <div class="flex items-center gap-3">
+              <span class="hover-hint-badge">
+                <span>4 Highlights</span>
+                <span class="hover-hint-arrow">↓</span>
+              </span>
+              <span class="text-xs font-mono px-3 py-1 rounded-full border shrink-0"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-muted);">
+                Mar 2025 – Present
+              </span>
+            </div>
           </div>
 
-          <ul class="space-y-2.5 text-sm sm:text-base leading-relaxed list-disc list-outside pl-5"
-            style="color: var(--text-body);">
-            <li>
-              <strong>Mission-Grade Microservices:</strong> Owned end-to-end delivery of tax form and accounting
-              microservices using Java 11 and Spring Boot, integrating OpenAPI/Swagger, Feign Client, and Kong Gateway,
-              <strong>reducing cross-service integration time by 30%</strong>.
-            </li>
-            <li>
-              <strong>Distributed L2 Cache:</strong> Redesigned Hibernate/JPA entity relationships and deployed Redis
-              distributed caching, <strong>cutting response times by 25% and alleviating database read pressure by
-                20%</strong>.
-            </li>
-            <li>
-              <strong>High-Volume Asynchronous Streams:</strong> Engineered and operated Kafka streaming pipelines for
-              tax ingestion, <strong>expanding system throughput by 35%</strong> and decoupling downstream accounting
-              workflows.
-            </li>
-            <li>
-              <strong>Agile Leadership & Mentorship:</strong> Supervised 4+ junior developers, improving code coverage
-              by 20% via Claude and Cursor scaffolding, and raised sprint predictability by 15%.
-            </li>
-          </ul>
+          <div class="hover-reveal-content pt-3 border-t border-white/5">
+            <ul class="space-y-2.5 text-sm sm:text-base leading-relaxed list-disc list-outside pl-5"
+              style="color: var(--text-body);">
+              <li>
+                <strong>Mission-Grade Microservices:</strong> Owned end-to-end delivery of tax form and accounting
+                microservices using Java 11 and Spring Boot, integrating OpenAPI/Swagger, Feign Client, and Kong Gateway,
+                <strong>reducing cross-service integration time by 30%</strong>.
+              </li>
+              <li>
+                <strong>Distributed L2 Cache:</strong> Redesigned Hibernate/JPA entity relationships and deployed Redis
+                distributed caching, <strong>cutting response times by 25% and alleviating database read pressure by
+                  20%</strong>.
+              </li>
+              <li>
+                <strong>High-Volume Asynchronous Streams:</strong> Engineered and operated Kafka streaming pipelines for
+                tax ingestion, <strong>expanding system throughput by 35%</strong> and decoupling downstream accounting
+                workflows.
+              </li>
+              <li>
+                <strong>Agile Leadership & Mentorship:</strong> Supervised 4+ junior developers, improving code coverage
+                by 20% via Claude and Cursor scaffolding, and raised sprint predictability by 15%.
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Role 2 -->
-        <div class="editorial-card rounded-2xl p-8 space-y-4 border-l-4 border-l-emerald-400">
-          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
+        <div class="editorial-card hover-expand-card rounded-2xl p-7 sm:p-8 space-y-4 border-l-4 border-l-emerald-400 group" tabindex="0"
+          title="Hover or click to view production highlights">
+          <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
             <div>
               <h3 class="text-xl font-bold font-sans" style="color: var(--text-title);">
                 Java Backend Developer
@@ -1125,32 +1282,40 @@
                 Tata Consultancy Services Global Enterprise Practice
               </p>
             </div>
-            <span class="text-xs font-mono px-3 py-1 rounded-full border shrink-0"
-              style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-muted);">
-              Jan 2022 – Mar 2025
-            </span>
+            <div class="flex items-center gap-3">
+              <span class="hover-hint-badge">
+                <span>4 Highlights</span>
+                <span class="hover-hint-arrow">↓</span>
+              </span>
+              <span class="text-xs font-mono px-3 py-1 rounded-full border shrink-0"
+                style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-muted);">
+                Jan 2022 – Mar 2025
+              </span>
+            </div>
           </div>
 
-          <ul class="space-y-2.5 text-sm sm:text-base leading-relaxed list-disc list-outside pl-5"
-            style="color: var(--text-body);">
-            <li>
-              <strong>Monolith Decomposition:</strong> Decomposed monolithic business core into RESTful microservices,
-              containerized with Docker on Linux, provisioned environments via Terraform & Ansible, and automated
-              Jenkins CI/CD, <strong>improving release cadence by 40%</strong>.
-            </li>
-            <li>
-              <strong>Zero-Downtime Database Migration:</strong> Guided batch migration from legacy IBM DB2 to
-              PostgreSQL using Spring Batch, <strong>achieving 100% data integrity with zero downtime</strong>.
-            </li>
-            <li>
-              <strong>Production RCA:</strong> Diagnosed critical production incidents using ELK Stack (Elasticsearch,
-              Logstash, Kibana), <strong>cutting mean resolution time by 25% and operational downtime by 15%</strong>.
-            </li>
-            <li>
-              <strong>Security Compliance:</strong> Deployed Azure Information Protection (AIP) for 100% internal
-              reporting compliance, and built dynamic Spring MVC file stream modules cutting turnaround time by 30%.
-            </li>
-          </ul>
+          <div class="hover-reveal-content pt-3 border-t border-white/5">
+            <ul class="space-y-2.5 text-sm sm:text-base leading-relaxed list-disc list-outside pl-5"
+              style="color: var(--text-body);">
+              <li>
+                <strong>Monolith Decomposition:</strong> Decomposed monolithic business core into RESTful microservices,
+                containerized with Docker on Linux, provisioned environments via Terraform & Ansible, and automated
+                Jenkins CI/CD, <strong>improving release cadence by 40%</strong>.
+              </li>
+              <li>
+                <strong>Zero-Downtime Database Migration:</strong> Guided batch migration from legacy IBM DB2 to
+                PostgreSQL using Spring Batch, <strong>achieving 100% data integrity with zero downtime</strong>.
+              </li>
+              <li>
+                <strong>Production RCA:</strong> Diagnosed critical production incidents using ELK Stack (Elasticsearch,
+                Logstash, Kibana), <strong>cutting mean resolution time by 25% and operational downtime by 15%</strong>.
+              </li>
+              <li>
+                <strong>Security Compliance:</strong> Deployed Azure Information Protection (AIP) for 100% internal
+                reporting compliance, and built dynamic Spring MVC file stream modules cutting turnaround time by 30%.
+              </li>
+            </ul>
+          </div>
         </div>
 
       </div>
@@ -2088,6 +2253,21 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
           dismissSpidey();
         }
       }
+    });
+
+    // Progressive Hover / Tap Disclosure for Cards (Mobile & Keyboard accessibility)
+    document.querySelectorAll('.hover-expand-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('button, a, input, select')) return;
+        card.classList.toggle('is-expanded');
+      });
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          if (e.target.closest('button, a, input, select')) return;
+          e.preventDefault();
+          card.classList.toggle('is-expanded');
+        }
+      });
     });
   </script>
 </body>
