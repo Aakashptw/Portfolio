@@ -496,11 +496,10 @@
               class="px-2.5 py-1.5 rounded-lg font-bold text-white bg-rose-600 hover:bg-rose-500 transition shadow-sm cursor-pointer flex items-center gap-1">
               <span>👋 Thanks, Spidey!</span>
             </button>
-            <button onclick="spideyPlayMusic()"
-              class="px-2.5 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 text-stone-300 transition cursor-pointer flex items-center gap-1"
-              title="Play 'All The Stars' background music">
-              <span>🎵 Play Track</span>
-            </button>
+            <a href="#architecture" onclick="dismissSpidey()"
+              class="px-2.5 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 text-stone-300 transition cursor-pointer flex items-center gap-1">
+              <span>⚡ View Architecture</span>
+            </a>
             <button onclick="spideyOpenChat()"
               class="px-2.5 py-1.5 rounded-lg border border-sky-500/30 bg-sky-500/10 text-sky-300 hover:bg-sky-500/20 transition cursor-pointer flex items-center gap-1">
               <span>💬 Ask AI</span>
@@ -550,24 +549,8 @@
         <a href="#contact" class="hover:text-sky-400 transition" style="color: var(--text-muted);">Contact</a>
       </nav>
 
-      <!-- Utilities (Music, Theme & CV) -->
+      <!-- Utilities (Theme & CV) -->
       <div class="flex items-center gap-2.5 sm:gap-3">
-
-        <!-- Background Music Player Header Pill -->
-        <button id="music-header-btn" onclick="togglePortfolioMusic()"
-          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono font-semibold border transition cursor-pointer hover:border-sky-400 group shadow-sm"
-          style="background-color: var(--bg-surface); color: var(--text-title); border-color: var(--border-color);"
-          title="Play 'All The Stars' by Kendrick Lamar & SZA">
-          <span class="text-sky-400 text-xs">🎵</span>
-          <span id="music-header-icon" class="text-sky-400 font-bold text-[10px]">▶</span>
-          <span id="music-header-label" class="hidden sm:inline text-[11px]">All The Stars</span>
-          <div id="music-header-bars" class="hidden items-end gap-0.5 h-3">
-            <span class="w-0.5 bg-sky-400 rounded-full h-2 animate-pulse"></span>
-            <span class="w-0.5 bg-emerald-400 rounded-full h-3 animate-pulse" style="animation-delay: 0.15s"></span>
-            <span class="w-0.5 bg-sky-400 rounded-full h-1.5 animate-pulse" style="animation-delay: 0.3s"></span>
-            <span class="w-0.5 bg-emerald-400 rounded-full h-2.5 animate-pulse" style="animation-delay: 0.45s"></span>
-          </div>
-        </button>
 
         <!-- Theme Selector -->
         <select id="theme-selector"
@@ -1587,57 +1570,6 @@
   </div>
 
   <!-- ==========================================================
-       BACKGROUND MUSIC PLAYER ("All The Stars" - Kendrick Lamar & SZA)
-       ========================================================== -->
-  <audio id="portfolio-audio" loop preload="auto">
-    <source src="all-the-stars.mp3" type="audio/mpeg">
-    <source
-      src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview221/v4/ea/8b/2c/ea8b2cf4-95f2-b0b3-ffc5-10f4611bf98f/mzaf_6758805407695014001.plus.aac.p.m4a"
-      type="audio/mp4">
-  </audio>
-
-  <!-- Welcome Music Prompt Toast (Bottom-Left) -->
-  <div id="music-welcome-toast"
-    class="no-print fixed bottom-5 left-5 sm:bottom-6 sm:left-6 z-50 max-w-[340px] rounded-2xl p-4 border shadow-2xl backdrop-blur-xl transition-all duration-500 transform translate-y-0 opacity-100 flex flex-col gap-3 font-sans"
-    style="background-color: var(--bg-surface); border-color: var(--border-color); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.7);">
-
-    <div class="flex items-start justify-between gap-2.5">
-      <div class="flex items-center gap-2.5">
-        <div
-          class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center text-white text-base shadow-md shrink-0">
-          🎵
-        </div>
-        <div>
-          <div class="flex items-center gap-1.5">
-            <h4 class="text-xs font-bold" style="color: var(--text-hero);">Play Background Music?</h4>
-            <span
-              class="px-1.5 py-0.5 rounded text-[9px] font-mono font-bold bg-sky-500/10 text-sky-400 border border-sky-500/20">OST</span>
-          </div>
-          <p class="text-[11px] font-mono leading-tight mt-0.5" style="color: var(--text-muted);">
-            All The Stars &bull; Kendrick Lamar & SZA
-          </p>
-        </div>
-      </div>
-      <button onclick="dismissMusicToast()" class="text-xs text-muted hover:text-white p-1 cursor-pointer shrink-0"
-        title="Dismiss">✕</button>
-    </div>
-
-    <div class="flex items-center justify-between gap-2 pt-1 border-t" style="border-color: var(--border-color);">
-      <button id="toast-play-btn" onclick="togglePortfolioMusic()"
-        class="flex-1 py-1.5 px-3 rounded-lg text-xs font-mono font-bold text-white transition flex items-center justify-center gap-1.5 shadow-sm hover:opacity-90 cursor-pointer bg-sky-500">
-        <span id="toast-play-icon">▶</span>
-        <span id="toast-play-text">Play Track</span>
-      </button>
-      <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg border text-[11px] font-mono"
-        style="background-color: var(--bg-surface-subtle); border-color: var(--border-color); color: var(--text-muted);">
-        <span>🔊</span>
-        <input id="music-volume" type="range" min="0" max="1" step="0.05" value="0.35"
-          oninput="setMusicVolume(this.value)" class="w-14 accent-sky-400 cursor-pointer h-1 rounded" title="Volume">
-      </div>
-    </div>
-  </div>
-
-  <!-- ==========================================================
        AI PROFILE CHATBOT (DEVELOPER TERMINAL / IDE ASSISTANT)
        ========================================================== -->
   <div class="no-print fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex flex-col items-end gap-3 font-sans">
@@ -1789,7 +1721,7 @@
   </footer>
 
   <!-- ==========================================================
-       SCRIPTS: THEMES, MODALS, MUSIC, SIMULATOR & AI CHAT
+       SCRIPTS: THEMES, MODALS, SIMULATOR & AI CHAT
        ========================================================== -->
   <script>
     // Theme Switcher
@@ -1863,83 +1795,6 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
         }
       }, 400);
     }
-
-    // ==========================================================
-    // BACKGROUND MUSIC CONTROLLER ("All The Stars")
-    // ==========================================================
-    const audio = document.getElementById('portfolio-audio');
-    const headerIcon = document.getElementById('music-header-icon');
-    const headerLabel = document.getElementById('music-header-label');
-    const headerBars = document.getElementById('music-header-bars');
-    const toastPlayIcon = document.getElementById('toast-play-icon');
-    const toastPlayText = document.getElementById('toast-play-text');
-    const musicToast = document.getElementById('music-welcome-toast');
-    let isMusicPlaying = false;
-
-    if (audio) {
-      audio.volume = 0.35;
-    }
-
-    function togglePortfolioMusic() {
-      if (!audio) return;
-      if (isMusicPlaying) {
-        audio.pause();
-        isMusicPlaying = false;
-        updateMusicUI(false);
-      } else {
-        audio.play().then(() => {
-          isMusicPlaying = true;
-          updateMusicUI(true);
-        }).catch(err => {
-          console.log("Audio playback blocked or waiting for user gesture:", err);
-        });
-      }
-    }
-
-    function updateMusicUI(playing) {
-      if (playing) {
-        if (headerIcon) headerIcon.textContent = '⏸';
-        if (headerLabel) headerLabel.textContent = 'All The Stars';
-        if (headerBars) {
-          headerBars.classList.remove('hidden');
-          headerBars.classList.add('flex');
-        }
-        if (toastPlayIcon) toastPlayIcon.textContent = '⏸';
-        if (toastPlayText) toastPlayText.textContent = 'Pause Track';
-      } else {
-        if (headerIcon) headerIcon.textContent = '▶';
-        if (headerLabel) headerLabel.textContent = 'All The Stars';
-        if (headerBars) {
-          headerBars.classList.add('hidden');
-          headerBars.classList.remove('flex');
-        }
-        if (toastPlayIcon) toastPlayIcon.textContent = '▶';
-        if (toastPlayText) toastPlayText.textContent = 'Play Track';
-      }
-    }
-
-    function setMusicVolume(val) {
-      if (audio) {
-        audio.volume = parseFloat(val);
-      }
-    }
-
-    function dismissMusicToast() {
-      if (musicToast) {
-        musicToast.style.opacity = '0';
-        musicToast.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-          musicToast.classList.add('hidden');
-        }, 500);
-      }
-      sessionStorage.setItem('music_toast_dismissed', 'true');
-    }
-
-    window.addEventListener('DOMContentLoaded', () => {
-      if (sessionStorage.getItem('music_toast_dismissed') === 'true') {
-        if (musicToast) musicToast.classList.add('hidden');
-      }
-    });
 
     // ==========================================================
     // AI PROFILE CHATBOT ENGINE
@@ -2202,15 +2057,6 @@ Summary: "Distributed L2 cache layer over Spring Data JPA and PostgreSQL. Freque
         ];
         text.innerHTML = spiderQuotes[Math.floor(Math.random() * spiderQuotes.length)];
       }
-    }
-
-    function spideyPlayMusic() {
-      togglePortfolioMusic();
-      const text = document.getElementById('spidey-speech-text');
-      if (text) {
-        text.innerHTML = "🎶 <em>'All the stars are closer...'</em> That's what I'm talking about! Enjoy the music while you browse!";
-      }
-      setTimeout(dismissSpidey, 2600);
     }
 
     function spideyOpenChat() {
